@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<objetos>
+    <objeto>
+        <nombre>Computador</nombre>
+        <descripcion>Escritorio</descripcion>
+        <codigo>0</codigo>
+        <estado>Prestado</estado>
+    </objeto>
+    <objeto>
+        <nombre>Video Beam 1</nombre>
+        <descripcion>Epson1</descripcion>
+        <codigo>1</codigo>
+        <estado>Disponible</estado>
+    </objeto>
+    <objeto>
+        <nombre>Video Beam 2</nombre>
+        <descripcion>Epson</descripcion>
+        <codigo>2</codigo>
+        <estado>Prestado</estado>
+    </objeto>
+    <objeto>
+        <nombre>Video Beam 3</nombre>
+        <descripcion>Sonic</descripcion>
+        <codigo>3</codigo>
+        <estado>Disponible</estado>
+    </objeto>
+    <objeto>
+        <nombre>Mesa Plegable</nombre>
+        <descripcion>180 x 74 x 75</descripcion>
+        <codigo>4</codigo>
+        <estado>Disponible</estado>
+    </objeto>
+    <objeto>
+        <nombre>Silla con espaldar</nombre>
+        <descripcion>Rimax</descripcion>
+        <codigo>5</codigo>
+        <estado>Prestado</estado>
+    </objeto>
+    <objeto>
+        <nombre>Mesa cuadrada</nombre>
+        <descripcion>Plástica cuadrada Rimax</descripcion>
+        <codigo>6</codigo>
+        <estado>Prestado</estado>
+    </objeto>
+    <objeto>
+        <nombre>Portatil</nombre>
+        <descripcion>Toshiba Satellite</descripcion>
+        <codigo>7</codigo>
+        <estado>Disponible</estado>
+    </objeto>
+    <objeto>
+        <nombre>Tablero Acrílico</nombre>
+        <descripcion>con base 160 cm x 120 cm</descripcion>
+        <codigo>8</codigo>
+        <estado>Prestado</estado>
+    </objeto>
+    <objeto>
+        <nombre>Computador </nombre>
+        <descripcion>Acer One</descripcion>
+        <codigo>9</codigo>
+        <estado>Disponible</estado>
+    </objeto>
+    <objeto>
+        <nombre>Mesa Plegable 2</nombre>
+        <descripcion>180 x 74 x 75</descripcion>
+        <codigo>10</codigo>
+        <estado>Prestado</estado>
+    </objeto>
+    <objeto>
+        <nombre>Micrófono Inhalámbrico</nombre>
+        <descripcion>Premier MIC-131 Negro</descripcion>
+        <codigo>11</codigo>
+        <estado>Disponible</estado>
+    </objeto>
+</objetos>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<usuarios>
+    <usuario>
+        <login>admin</login>
+        <clave>admin</clave>
+    </usuario>
+    <usuario>
+        <login>user</login>
+        <clave>123</clave>
+    </usuario>
+    <usuario>
+        <login>tester</login>
+        <clave>tester</clave>
+    </usuario>
+</usuarios>

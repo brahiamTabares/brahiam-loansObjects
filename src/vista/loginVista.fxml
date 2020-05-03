@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.PasswordField?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="288.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorLogin">
+	<columnConstraints>
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="91.0" />
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="237.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="42.0" />
+	</columnConstraints>
+	<rowConstraints>
+      <RowConstraints maxHeight="15.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+		<RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+		<RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+		<RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="29.0" minHeight="0.0" prefHeight="21.0" vgrow="SOMETIMES" />
+	</rowConstraints>
+	<children>
+		<Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="81.0" text="Login:" textAlignment="CENTER" GridPane.rowIndex="1" />
+		<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="84.0" text="Password:" GridPane.rowIndex="2" />
+		<TextField fx:id="login" prefHeight="25.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+		<PasswordField fx:id="password" prefHeight="25.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+		<Label fx:id="mensajes" text="" GridPane.rowIndex="3" />
+		<Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#autenticar" prefHeight="25.0" prefWidth="87.0" text="Ingresar" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+	</children>
+</GridPane>

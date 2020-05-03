@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="900.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorPrestamo">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Pane layoutX="19.0" layoutY="47.0" prefHeight="163.0" prefWidth="772.0">
+      <children>
+        <GridPane layoutX="331.0" layoutY="14.0">
+          <children>
+            <Label prefHeight="30.0" prefWidth="112.0" text="Estado" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="estadoPrestamoText" prefHeight="27.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="54.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="146.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="38.0" layoutY="14.0" prefHeight="51.0" prefWidth="276.0">
+          <children>
+            <Label prefHeight="22.0" prefWidth="114.0" text="Numero prestamo" GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <font>
+                <Font size="14.0" />
+              </font>
+            </Label>
+            <TextField fx:id="numeroPrestamoText" prefHeight="27.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="380.0" minWidth="10.0" prefWidth="133.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="121.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="549.0" layoutY="14.0" prefHeight="30.0">
+          <children>
+            <Label prefHeight="22.0" prefWidth="80.0" text="Valor" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="valorPrestamoText" prefHeight="27.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="54.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="146.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="38.0" layoutY="102.0" prefWidth="283.0">
+          <children>
+            <Label prefHeight="26.0" prefWidth="132.0" text="Fecha inicio" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="fechaPrestamoText" prefHeight="31.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="105.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="178.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="358.0" layoutY="102.0" prefWidth="283.0">
+          <children>
+            <Label prefHeight="22.0" prefWidth="97.0" text="Fecha fin:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="fechaEntregaText" prefHeight="31.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="81.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="202.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <Label layoutX="38.0" layoutY="67.0" prefHeight="21.9609375" prefWidth="114.0" text="Fecha de prestamo" />
+        <Line endX="480.0" endY="-1.0" layoutX="244.0" layoutY="81.0" startX="-101.0" startY="1.0" />
+        <Line endX="5.0" endY="2.0" layoutX="31.0" layoutY="77.0" startX="-22.0" startY="2.0" />
+        <Line endX="74.0" endY="57.0" layoutX="649.0" layoutY="89.0" startX="75.0" startY="-8.0" />
+        <Line endX="148.0" endY="1.0" layoutX="576.0" layoutY="146.0" startX="-569.0" startY="0.0" />
+        <Line endX="-133.0" endY="56.0" layoutX="139.0" layoutY="89.0" startX="-132.0" startY="-10.0" />
+      </children>
+    </Pane>
+    <Label layoutX="73.0" layoutY="14.0" prefHeight="26.0" prefWidth="174.0" text="Informacion del prestamo " textAlignment="LEFT" textFill="#292929" />
+    <Pane layoutX="30.0" layoutY="204.0" prefHeight="373.0" prefWidth="741.0">
+      <children>
+        <Label layoutX="14.0" layoutY="3.0" prefHeight="22.0" prefWidth="146.0" text="Informacion del cliente" />
+        <ComboBox id="nombreClienteText" fx:id="clienteAsociado" layoutX="14.0" layoutY="28.0" prefHeight="21.0" prefWidth="276.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label layoutX="418.0" layoutY="6.0" prefHeight="22.0" prefWidth="174.0" text="Informacion del empleado" />
+        <ComboBox id="nombreEmpleado" fx:id="empleadoAsociado" layoutX="418.0" layoutY="28.0" prefHeight="21.0" prefWidth="296.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label layoutX="35.0" layoutY="66.0" prefHeight="22.0" prefWidth="174.0" text="Lista de objetos a prestar" />
+        <Label layoutX="429.0" layoutY="66.0" prefHeight="22.0" prefWidth="174.0" text="Lista de objetos disponibles" />
+        <TableView id="tablaPrestamos" fx:id="tablaObjetosAp" layoutX="14.0" layoutY="99.0" prefHeight="200.0" prefWidth="271.0">
+          <columns>
+            <TableColumn fx:id="nombreColumn2" maxWidth="5000.0" minWidth="10.0" prefWidth="124.0" text="Nombre" />
+            <TableColumn fx:id="codigoColumn2" maxWidth="5000.0" minWidth="10.0" prefWidth="127.0" text="Codigo" />
+          </columns>
+        </TableView>
+        <TableView fx:id="tablaObjetosD" layoutX="424.0" layoutY="99.0" prefHeight="200.0" prefWidth="283.0">
+          <columns>
+            <TableColumn fx:id="nombre1Column" maxWidth="5000.0" minWidth="10.0" prefWidth="142.0" text="Nombre" />
+            <TableColumn fx:id="codigo1Column" maxWidth="5000.0" minWidth="10.0" prefWidth="145.0" text="Codigo" />
+          </columns>
+        </TableView>
+        <Button layoutX="381.0" layoutY="337.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="105.0" text="Actualizar" />
+        <Button layoutX="613.0" layoutY="337.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="105.0" text="Agregar" />
+        <Button layoutX="498.0" layoutY="337.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="105.0" text="Nuevo" />
+        <Button layoutX="304.0" layoutY="192.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="105.0" text="&gt;&gt;">
+          <font>
+            <Font size="22.0" />
+          </font>
+        </Button>
+        <Button layoutX="303.0" layoutY="135.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="105.0" text="&lt;&lt;" />
+        <Line endX="-26.0" endY="4.0" layoutX="324.0" layoutY="77.0" startX="-136.0" startY="4.0" />
+        <Line endX="-68.0" endY="223.0" layoutX="366.0" layoutY="88.0" startX="-67.0" startY="-5.0" />
+        <Line endX="100.0" layoutX="197.0" layoutY="311.0" startX="-190.0" startY="-1.0" />
+        <Line endX="-60.0" endY="-2.0" layoutX="94.0" layoutY="82.0" startX="-88.0" startY="-2.0" />
+        <Line endX="-116.0" endY="-16.0" layoutX="122.0" layoutY="328.0" startX="-118.0" startY="-246.0" />
+        <Line endX="50.0" endY="2.0" layoutX="667.0" layoutY="80.0" startX="-66.0" startY="1.0" />
+        <Line endX="71.0" endY="224.0" layoutX="651.0" layoutY="89.0" startX="69.0" startY="-5.0" />
+        <Line endX="-22.0" endY="-8.0" layoutX="450.0" layoutY="89.0" startX="-41.0" startY="-8.0" />
+        <Line endX="-41.0" endY="-7.0" layoutX="450.0" layoutY="89.0" startX="-40.0" startY="224.0" />
+        <Line endX="208.0" endY="0.0" layoutX="513.0" layoutY="313.0" startX="-100.0" />
+        <Line endX="48.0" endY="1.0" layoutX="256.0" layoutY="20.0" startX="-100.0" />
+        <Line endX="-100.0" endY="34.0" layoutX="405.0" layoutY="22.0" startX="-100.0" />
+        <Line endX="100.0" layoutX="204.0" layoutY="57.0" startX="-200.0" startY="-3.0" />
+        <Line endX="-127.0" endY="-13.0" layoutX="130.0" layoutY="66.0" startX="-127.0" startY="-47.0" />
+        <Line endX="-171.0" endY="-47.0" layoutX="185.0" layoutY="66.0" startX="-180.0" startY="-47.0" />
+        <Line endX="44.0" endY="-2.0" layoutX="679.0" layoutY="21.0" startX="-97.0" startY="-1.0" />
+        <Line endX="131.0" endY="3.0" layoutX="587.0" layoutY="54.0" startX="-179.0" startY="3.0" />
+        <Line endX="-11.0" endY="-44.0" layoutX="419.0" layoutY="66.0" startX="-11.0" startY="-10.0" />
+        <Line endX="-78.0" endY="-46.0" layoutX="498.0" layoutY="66.0" startX="-90.0" startY="-46.0" />
+        <Line endX="104.0" endY="-44.0" layoutX="618.0" layoutY="66.0" startX="103.0" startY="-12.0" />
+      </children>
+    </Pane>
+    <Pane layoutX="11.0" layoutY="588.0" prefHeight="252.0" prefWidth="766.0">
+      <children>
+        <TableView fx:id="tablaPrestamos" layoutX="19.0" layoutY="45.0" prefHeight="200.0" prefWidth="729.0">
+          <columns>
+            <TableColumn fx:id="prestamoColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="94.0" text="#prestamo" />
+            <TableColumn fx:id="fechaInColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Fecha inicio" />
+            <TableColumn fx:id="fechaFinColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="99.0" text="Fecha Fin" />
+            <TableColumn fx:id="clienteColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="100.0" text="Cliente" />
+            <TableColumn fx:id="empleadoColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="98.0" text="Empleado" />
+            <TableColumn fx:id="estadoColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="112.0" text="Estado" />
+            <TableColumn fx:id="valorColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="112.0" text="Valor" />
+          </columns>
+        </TableView>
+        <Label layoutX="54.0" layoutY="3.0" prefHeight="30.0" prefWidth="174.0" text="Lista de prestamos realizados" />
+        <Line endX="446.0" endY="1.0" layoutX="312.0" layoutY="22.0" startX="-100.0" />
+        <Line endX="127.0" endY="222.0" layoutX="631.0" layoutY="34.0" startX="128.0" startY="-11.0" />
+        <Line endX="-51.0" endY="-13.0" layoutX="101.0" layoutY="33.0" startX="-93.0" startY="-13.0" />
+        <Line endX="-111.0" endY="225.0" layoutX="120.0" layoutY="34.0" startX="-111.0" startY="-13.0" />
+        <Line endX="648.0" endY="-1.0" layoutX="111.0" layoutY="259.0" startX="-100.0" />
+      </children>
+    </Pane>
+    <Line endX="426.0" endY="3.0" layoutX="351.0" layoutY="28.0" startX="-114.0" startY="3.0">
+      <stroke>
+        <Color blue="0.800" green="0.514" red="0.000" />
+      </stroke>
+    </Line>
+    <Line endX="-22.0" endY="28.0" layoutX="94.0" layoutY="2.0" startX="-83.0" startY="29.0" stroke="$x3" />
+    <Line endX="-391.0" endY="182.0" layoutX="400.0" layoutY="400.0" startX="-392.0" startY="-370.0" stroke="$x3" />
+    <Line endX="16.0" endY="559.0" layoutX="766.0" layoutY="27.0" startX="15.0" startY="5.0" />
+    <Line endX="377.0" endY="-276.0" layoutX="403.0" layoutY="861.0" startX="-393.0" startY="-277.0" />
+  </children>
+</AnchorPane>

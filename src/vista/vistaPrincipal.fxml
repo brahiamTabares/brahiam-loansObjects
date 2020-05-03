@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane minHeight="650" minWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controlador.ControladorPrincipal">
+  <!-- TODO Add Nodes -->
+  <center>
+    <TabPane fx:id="tabpane" prefHeight="900.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs >
+        <Tab text="Crud Cliente">
+          <content>
+            <fx:include source="crudClienteVista.fxml" />
+          </content>
+        </Tab>
+        <Tab text="Crud Empleado">
+          <content>
+            <fx:include source="crudEmpleadoVista.fxml" />
+          </content>
+        </Tab>
+        <Tab text="Crud Objeto">
+          <content>
+            <fx:include source="crudObjetoVista.fxml" />
+          </content>
+        </Tab>
+        <Tab text="Prestamos">
+          <content>
+            <fx:include source="PrestamosVista2.fxml"/>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </center>
+</BorderPane>

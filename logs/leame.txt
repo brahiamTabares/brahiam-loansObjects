@@ -1,0 +1,1 @@
+Carpeta para almacenarlos logs de la aplicacion

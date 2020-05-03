@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<prestamos>
+    <prestamo>
+        <numero>1</numero>
+        <fechaPrestamo>12/12/2020</fechaPrestamo>
+        <fechaEntrega>12/12/2020</fechaEntrega>
+        <valorPrestamo>10000</valorPrestamo>
+        <estado>creado</estado>
+        <empleadoAsociado>
+            <nombre>emp0</nombre>
+            <apellido>ap0</apellido>
+            <cedula>2220</cedula>
+            <direccion>dir0</direccion>
+        </empleadoAsociado>
+        <clienteAsociado>
+            <nombre>cli0</nombre>
+            <apellido>ap0</apellido>
+            <cedula>1110</cedula>
+            <direccion>dir0</direccion>
+        </clienteAsociado>
+        <listaObjetosAsociados>
+            <nombre>obj</nombre>
+            <descripcion>des</descripcion>
+            <codigo>0</codigo>
+            <estado>Prestado</estado>
+        </listaObjetosAsociados>
+        <listaObjetosAsociados>
+            <nombre>obj</nombre>
+            <descripcion>des</descripcion>
+            <codigo>5</codigo>
+            <estado>Prestado</estado>
+        </listaObjetosAsociados>
+        <listaObjetosAsociados>
+            <nombre>obj</nombre>
+            <descripcion>des</descripcion>
+            <codigo>10</codigo>
+            <estado>Prestado</estado>
+        </listaObjetosAsociados>
+        <listaObjetosAsociados>
+            <nombre>obj</nombre>
+            <descripcion>des</descripcion>
+            <codigo>15</codigo>
+            <estado>Prestado</estado>
+        </listaObjetosAsociados>
+    </prestamo>
+</prestamos>
