@@ -1,6 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +23,7 @@ import persistencia.PersistenciaComas;
 import persistencia.PersistenciaXML;
 import persistencia.Prestamos;
 import persistencia.Usuarios;
-
+//prubea
 public class Empresa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
