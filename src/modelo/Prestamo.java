@@ -1,6 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +16,8 @@ public class Prestamo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Integer numero;
-	private String fechaPrestamo;
-	private String fechaEntrega;
+	private LocalDate fechaPrestamo;
+	private LocalDate fechaEntrega;
 	private String numeroObjetoPrestado;
 	private Integer valorPrestamo;
 	private String estado;
@@ -43,7 +44,7 @@ public class Prestamo implements Serializable {
 //		this.estado = estado;
 //	}
 //	
-	public Prestamo(int numero, String fechaPrestamo, String fechaEntrega, String numeroObjetoPrestado,
+	public Prestamo(int numero, LocalDate fechaPrestamo, LocalDate fechaEntrega, String numeroObjetoPrestado,
 			int valorPrestamo, String estado, Empleado empleadoAsociado, Cliente clienteAsociado,
 			List<Objeto> listaObjetosAsociados) {
 		this.numero = numero;
@@ -67,19 +68,19 @@ public class Prestamo implements Serializable {
 		this.numero = numero;
 	}
 
-	public String getFechaPrestamo() {
+	public LocalDate getFechaPrestamo() {
 		return fechaPrestamo;
 	}
 
-	public void setFechaPrestamo(String fechaPrestamo) {
+	public void setFechaPrestamo(LocalDate fechaPrestamo) {
 		this.fechaPrestamo = fechaPrestamo;
 	}
 
-	public String getFechaEntrega() {
+	public LocalDate getFechaEntrega() {
 		return fechaEntrega;
 	}
 
-	public void setFechaEntrega(String fechaEntrega) {
+	public void setFechaEntrega(LocalDate fechaEntrega) {
 		this.fechaEntrega = fechaEntrega;
 	}
 
