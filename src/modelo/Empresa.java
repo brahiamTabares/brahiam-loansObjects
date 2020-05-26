@@ -23,7 +23,7 @@ import persistencia.PersistenciaComas;
 import persistencia.PersistenciaXML;
 import persistencia.Prestamos;
 import persistencia.Usuarios;
-//Papichulo
+
 public class Empresa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
