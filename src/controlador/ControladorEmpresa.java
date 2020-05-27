@@ -1,5 +1,6 @@
 package controlador;
 
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
@@ -138,7 +139,7 @@ public class ControladorEmpresa {
 
 	}
 
-	public Prestamo crearPrestamon(int numero, String fechaPrestamo, String fechaEntrega, int valorPrestamo, String estado,
+	public Prestamo crearPrestamon(int numero, LocalDate fechaPrestamo, LocalDate fechaEntrega, int valorPrestamo, String estado,
 			Cliente cliente, Empleado empleado, List<Objeto> listaObjetosPrestar) throws PrestamoExisteException {
 
 		return empresa.crearPrestamo(numero, fechaPrestamo, fechaEntrega, valorPrestamo, estado, cliente, empleado,

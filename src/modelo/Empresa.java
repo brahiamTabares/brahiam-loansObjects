@@ -1,7 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
-
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,7 +95,7 @@ public class Empresa implements Serializable {
 
 	}
 	
-	public Prestamo crearPrestamo(int numero, String fechaPrestamo, String fechaEntrega, int valorPrestamo,
+	public Prestamo crearPrestamo(int numero, LocalDate fechaPrestamo, LocalDate fechaEntrega, int valorPrestamo,
 			String estado, Cliente clienteAsociado, Empleado empleadoAsociado, List<Objeto> listaObjetosPrestar) throws PrestamoExisteException {
 
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un préstamo");
@@ -262,7 +262,7 @@ public class Empresa implements Serializable {
 		return true;
 	}
 
-	public boolean actualizarPrestamo(int numero, String fechaPrestamo, String fechaEntrega, int valorPrestamo,
+	public boolean actualizarPrestamo(int numero, LocalDate fechaPrestamo, LocalDate fechaEntrega, int valorPrestamo,
 			String estado, Cliente clienteAsociado, Empleado empleadoAsociado, List<Objeto> listaObjetosPrestar) throws PrestamoNoExisteException {
 
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", actualizó un préstamo");
