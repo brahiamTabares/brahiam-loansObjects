@@ -27,7 +27,7 @@ public class Persona {
 	public Persona() {
 
 	}
-	public Persona(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
+	public Persona(String nombre,String tipoDocumento, String numeroDocumento,  String telefonoResidencia,
 			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) {
 		super();
 		this.tipoDocumento = tipoDocumento;

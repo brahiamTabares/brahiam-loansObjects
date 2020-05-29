@@ -169,8 +169,9 @@ public class ControladorCrudCliente implements ControladorVentana {
 		Cliente cliente;
 		if (nuevo) {
 			try {
-				cliente = ControladorEmpresa.getInstance().crearCliente(nombreText.getText(), apellidoText.getText(),
-						cedulaText.getText(), direccionTest.getText());
+				cliente = ControladorEmpresa.getInstance().crearCliente(nombreText.getText(),tipoDocumentoText.getValue(),numeroDText.getText(),
+						telefonoText.getText(),celularText.getText(),direccionTest.getText(),ciudadRText.getText(),departamentoText.getText(),
+						paisText.getText(),profesionText.getText(),emailText.getText());
 				tablaClientes.getItems().add(cliente);
 			} catch (ClienteExisteException e) {
 				AlertaUtil.mostrarMensajeError(e.getMessage());
@@ -178,8 +179,9 @@ public class ControladorCrudCliente implements ControladorVentana {
 
 		} else {
 			try {
-				ControladorEmpresa.getInstance().actualizarCliente(cedulaText.getText(), nombreText.getText(),
-						apellidoText.getText(), direccionTest.getText());
+				ControladorEmpresa.getInstance().actualizarCliente(nombreText.getText(),tipoDocumentoText.getValue(),numeroDText.getText(),
+						telefonoText.getText(),celularText.getText(),direccionTest.getText(),ciudadRText.getText(),departamentoText.getText(),
+						paisText.getText(),profesionText.getText(),emailText.getText());
 
 			} catch (ClienteNoExisteException e) {
 				AlertaUtil.mostrarMensajeError(e.getMessage());
