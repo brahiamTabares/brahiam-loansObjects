@@ -14,20 +14,22 @@ public class Empleado extends Persona implements Serializable {
 	// prueba
 
 	private static final long serialVersionUID = 1L;
+	private  String tipoEmpleado;
 	private List<Prestamo> listaPrestamosAsociados = new ArrayList<>();
 
 	public Empleado() {
 		super();
 	}
 
-	public Empleado(String nombre, String apellido, String cedula, String direccion) {
-		super(nombre, apellido, cedula, direccion);
+	public Empleado(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) {
+		  
+		super(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
+				departamento, pais, email);
 	}
-
-	public Empleado(String nombre, String apellido, String cedula) {
-		super(nombre, apellido, cedula);
-
-		// ClaseUnica.getInstancia().
+	public Empleado(String tipoEmpleado) {
+		
+		this.setTipoEmpleado(tipoEmpleado);
 	}
 
 	public List<Prestamo> getListaPrestamosAsociados() {
@@ -36,6 +38,14 @@ public class Empleado extends Persona implements Serializable {
 
 	public void setListaPrestamosAsociados(List<Prestamo> listaPrestamosAsociados) {
 		this.listaPrestamosAsociados = listaPrestamosAsociados;
+	}
+
+	public String getTipoEmpleado() {
+		return tipoEmpleado;
+	}
+
+	public void setTipoEmpleado(String tipoEmpleado) {
+		this.tipoEmpleado = tipoEmpleado;
 	}
 
 }

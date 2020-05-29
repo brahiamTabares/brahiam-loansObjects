@@ -5,11 +5,11 @@
         <clave>admin</clave>
     </usuario>
     <usuario>
-        <login>user</login>
-        <clave>123</clave>
+        <login>brahiam</login>
+        <clave>brahiam</clave>
     </usuario>
     <usuario>
-        <login>tester</login>
-        <clave>tester</clave>
+        <login>alvaro</login>
+        <clave>alvaro</clave>
     </usuario>
 </usuarios>

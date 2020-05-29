@@ -8,29 +8,60 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Persona {
 
+	
+	private String tipoDocumento;
+	private String numeroDocumento;
 	private String nombre;
-	private String apellido;
-	private String cedula;
+	private String telefonoResidencia;
+	private String telefonoCelular;
 	private String direccion;
+	private String ciudadR;
+	private String Departamento;
+	private String pais;
+	private String email;
 
 	public Persona() {
 
 	}
-
-	
-	public Persona(String nombre, String apellido, String cedula) {
+	public Persona(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) {
+		super();
+		this.tipoDocumento = tipoDocumento;
+		this.numeroDocumento = numeroDocumento;
 		this.nombre = nombre;
-		this.apellido = apellido;
-		this.cedula = cedula;
-	}
-
-	public Persona(String nombre, String apellido, String cedula, String direccion) {
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.cedula = cedula;
+		this.telefonoResidencia = telefonoResidencia;
+		this.telefonoCelular = telefonoCelular;
 		this.direccion = direccion;
+		this.ciudadR = ciudadR;
+		Departamento = departamento;
+		this.pais = pais;
+		this.email = email;
 	}
 
+
+	/*
+	 * (non-Javadoc) * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return numeroDocumento + " - " + nombre;
+	}
+
+	public String getTipoDocumento() {
+		return tipoDocumento;
+	}
+
+	public void setTipoDocumento(String tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
+	}
+
+	public String getNumeroDocumento() {
+		return numeroDocumento;
+	}
+
+	public void setNumeroDocumento(String numeroDocumento) {
+		this.numeroDocumento = numeroDocumento;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -40,20 +71,20 @@ public class Persona {
 		this.nombre = nombre;
 	}
 
-	public String getApellido() {
-		return apellido;
+	public String getTelefonoResidencia() {
+		return telefonoResidencia;
 	}
 
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setTelefonoResidencia(String telefonoResidencia) {
+		this.telefonoResidencia = telefonoResidencia;
 	}
 
-	public String getCedula() {
-		return cedula;
+	public String getTelefonoCelular() {
+		return telefonoCelular;
 	}
 
-	public void setCedula(String cedula) {
-		this.cedula = cedula;
+	public void setTelefonoCelular(String telefonoCelular) {
+		this.telefonoCelular = telefonoCelular;
 	}
 
 	public String getDireccion() {
@@ -64,13 +95,36 @@ public class Persona {
 		this.direccion = direccion;
 	}
 
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return cedula+ " - " + nombre + " " + apellido ;
+	public String getCiudadR() {
+		return ciudadR;
 	}
-	
+
+	public void setCiudadR(String ciudadR) {
+		this.ciudadR = ciudadR;
+	}
+
+	public String getDepartamento() {
+		return Departamento;
+	}
+
+	public void setDepartamento(String departamento) {
+		Departamento = departamento;
+	}
+
+	public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 }

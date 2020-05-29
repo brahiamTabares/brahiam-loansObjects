@@ -1,7 +1,6 @@
 package modelo;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,72 +14,56 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Prestamo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Integer numero;
-	private LocalDate fechaPrestamo;
-	private LocalDate fechaEntrega;
-	private String numeroObjetoPrestado;
-	private Integer valorPrestamo;
+	private Integer codigo;
 	private String estado;
+	private Integer valorPrestamo;
+	private String fechaPrestamo;
+	private String fechaEntrega;
+	private String numeroObjetoPrestado;
 	private Empleado empleadoAsociado;
 	private Cliente clienteAsociado;
 	private List<Objeto> listaObjetosAsociados = new ArrayList<>();
 
+	public Prestamo() {
 
-	
-	public Prestamo() 
-	{
-		
 	}
-	
-	
-//	public Prestamo(int numero, String fechaPrestamo, String fechaEntrega, String numeroObjectoPrestado,
-//			int valorPrestado, String estado) {
-//		super();
-//		this.numero = numero;
-//		this.fechaPrestamo = fechaPrestamo;
-//		this.fechaEntrega = fechaEntrega;
-//		this.numeroObjetoPrestado = numeroObjectoPrestado;
-//		this.valorPrestamo = valorPrestado;
-//		this.estado = estado;
-//	}
-//	
-	public Prestamo(int numero, LocalDate fechaPrestamo, LocalDate fechaEntrega, String numeroObjetoPrestado,
-			int valorPrestamo, String estado, Empleado empleadoAsociado, Cliente clienteAsociado,
+
+	public Prestamo(int codigo, String estado, int valorPrestamo, String fechaPrestamo, String fechaEntrega,
+			String numeroObjetoPrestado, Empleado empleadoAsociado, Cliente clienteAsociado,
 			List<Objeto> listaObjetosAsociados) {
-		this.numero = numero;
+		this.codigo = codigo;
+		this.estado = estado;
+		this.valorPrestamo = valorPrestamo;
 		this.fechaPrestamo = fechaPrestamo;
 		this.fechaEntrega = fechaEntrega;
 		this.numeroObjetoPrestado = numeroObjetoPrestado;
-		this.valorPrestamo = valorPrestamo;
-		this.estado = estado;
 		this.empleadoAsociado = empleadoAsociado;
 		this.clienteAsociado = clienteAsociado;
-		this.listaObjetosAsociados = new ArrayList<Objeto>(); 
-		this.listaObjetosAsociados.addAll(listaObjetosAsociados);		
+		this.listaObjetosAsociados = new ArrayList<Objeto>();
+		this.listaObjetosAsociados.addAll(listaObjetosAsociados);
 	}
 
-
-	public Integer getNumero() {
-		return numero;
+	public Integer getCodigo() {
+		return codigo;
 	}
 
-	public void setNumero(Integer numero) {
-		this.numero = numero;
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
 
-	public LocalDate getFechaPrestamo() {
+	public String getFechaPrestamo() {
 		return fechaPrestamo;
 	}
 
-	public void setFechaPrestamo(LocalDate fechaPrestamo) {
+	public void setFechaPrestamo(String fechaPrestamo) {
 		this.fechaPrestamo = fechaPrestamo;
 	}
 
-	public LocalDate getFechaEntrega() {
+	public String getFechaEntrega() {
 		return fechaEntrega;
 	}
 
-	public void setFechaEntrega(LocalDate fechaEntrega) {
+	public void setFechaEntrega(String fechaEntrega) {
 		this.fechaEntrega = fechaEntrega;
 	}
 
@@ -115,7 +98,6 @@ public class Prestamo implements Serializable {
 	public void setListaObjetosAsociados(List<Objeto> listaObjetosAsociados) {
 		this.listaObjetosAsociados = listaObjetosAsociados;
 	}
-
 
 	public Empleado getEmpleadoAsociado() {
 		return empleadoAsociado;

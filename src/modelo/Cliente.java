@@ -13,28 +13,25 @@ import javax.xml.bind.annotation.XmlRootElement;
 //prueba
 
 public class Cliente extends Persona implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
-    private List<Prestamo> listaPrestamosAsociados = new ArrayList<>();
-	
+
+	private List<Prestamo> listaPrestamosAsociados = new ArrayList<>();
+
 	public Cliente() {
 		super();
 	}
 
-	public Cliente(String nombre, String apellido, String cedula, String direccion) {
-		super(nombre, apellido, cedula, direccion);
+	public Cliente(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) {
+		
+		super(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
+				departamento, pais, email);
 	}
 
-	public Cliente(String nombre, String apellido, String cedula) {
-		super(nombre, apellido, cedula);
-	}
-	
-	
 	public List<Prestamo> getListaPrestamosAsociados() {
 		return listaPrestamosAsociados;
 	}
-
 
 	public void setListaPrestamosAsociados(List<Prestamo> listaPrestamosAsociados) {
 		this.listaPrestamosAsociados = listaPrestamosAsociados;

@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane minHeight="650" minWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controlador.ControladorPrincipal">
+<BorderPane minHeight="900.0" minWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorPrincipal">
   <!-- TODO Add Nodes -->
   <center>
     <TabPane fx:id="tabpane" prefHeight="900.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
-      <tabs >
+      <tabs>
         <Tab text="Crud Cliente">
           <content>
             <fx:include source="crudClienteVista.fxml" />
@@ -27,7 +27,7 @@
         </Tab>
         <Tab text="Prestamos">
           <content>
-            <fx:include source="PrestamosVista2.fxml"/>
+            <fx:include source="PrestamosVista2.fxml" />
           </content>
         </Tab>
       </tabs>

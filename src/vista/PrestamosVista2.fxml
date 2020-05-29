@@ -11,7 +11,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.TilePane?>
 
-      <ScrollPane minHeight="650" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorPrestamo">
+<ScrollPane minHeight="650" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorPrestamo">
         <content>
          
 <AnchorPane minHeight="900" prefWidth="800.0">
@@ -45,18 +45,20 @@
                </rowConstraints>
         </GridPane>
         
-        <GridPane layoutX="38.0" layoutY="102.0">
+        <GridPane layoutX="38.0" layoutY="105.0" prefHeight="26.0" prefWidth="500.0">
           <children>
-            <Label alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="132.0" text="Fecha inicio: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <TextField fx:id="fechaPrestamoText" prefHeight="31.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <Label alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="97.0" text="Fecha fin: " GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <TextField fx:id="fechaEntregaText" prefHeight="31.0" prefWidth="178.0" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <Label alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="132.0" text="Fecha inicio: " GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="97.0" text="Fecha fin: " GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                        <TextField fx:id="fechaPrestamoText" GridPane.columnIndex="2" />
+                        <TextField fx:id="fechaEntregaText" GridPane.columnIndex="4" />
           </children>
                <columnConstraints>
                   <ColumnConstraints />
                   <ColumnConstraints />
-                  <ColumnConstraints />
-                  <ColumnConstraints />
+                        <ColumnConstraints maxWidth="183.0" minWidth="10.0" prefWidth="146.0" />
+                  <ColumnConstraints maxWidth="136.0" minWidth="14.0" prefWidth="136.0" />
+                        <ColumnConstraints maxWidth="136.0" minWidth="10.0" prefWidth="136.0" />
+                  <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints />
@@ -156,4 +158,3 @@
 </AnchorPane>
        </content>
       </ScrollPane>
-      

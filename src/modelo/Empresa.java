@@ -1,7 +1,6 @@
 package modelo;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,48 +62,51 @@ public class Empresa implements Serializable {
 	}
 
 	// Crear
-	public Cliente crearCliente(String nombre, String apellido, String cedula, String direccion) throws ClienteExisteException {
+	public Cliente crearCliente(String tipoDocumento,String numeroDocumento,String nombre,String telefonoResidencia,
+			String telefonoCelular,String direccion,String ciudadR,String departamento,String pais,String email) throws ClienteExisteException {
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un cliente ");
-		if( buscarCliente(cedula) != null  ) {
-			throw new ClienteExisteException("ERROR: Ya existe un cliente con cédula "+cedula);
+		if( buscarCliente(numeroDocumento) != null  ) {
+			throw new ClienteExisteException("ERROR: Ya existe un cliente con cédula "+numeroDocumento);
 		}
-		Cliente nuevoCliente = new Cliente(nombre, apellido, cedula, direccion);
+		Cliente nuevoCliente = new Cliente(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR, departamento, pais, email);
 		listClientes.add(nuevoCliente);
 		return nuevoCliente;
 	}
 
-	public Empleado crearEmpleado(String nombre, String apellido, String cedula, String direccion) throws EmpleadoExisteException {
+	public Empleado crearEmpleado(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) throws EmpleadoExisteException {
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un empleado ");
-		if( buscarEmpleado(cedula) != null  ) {
-			throw new EmpleadoExisteException("ERROR: Ya existe un empleado con cédula "+cedula);
+		if( buscarEmpleado(numeroDocumento) != null  ) {
+			throw new EmpleadoExisteException("ERROR: Ya existe un empleado con cédula "+numeroDocumento);
 		}
-		Empleado nuevoEmpleado = new Empleado(nombre, apellido, cedula, direccion);
+		Empleado nuevoEmpleado = new Empleado(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
+				departamento, pais, email);
 		listaEmpleados.add(nuevoEmpleado);
 		return nuevoEmpleado;
 
 	}
 
-	public Objeto crearObjeto(String nombre, String descripcion, String codigo, String estado) throws ObjetoExisteException {
+	public Objeto crearObjeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
+			String tipo, int precioPrestamo) throws ObjetoExisteException {
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un objeto ");
 		if( buscarObjeto(codigo) != null  ) {
 			throw new ObjetoExisteException("ERROR: Ya existe un objeto con código "+codigo);
 		}
-		Objeto nuevoObjeto = new Objeto(nombre, descripcion, codigo, estado);
+		Objeto nuevoObjeto = new Objeto(nombre,codigo,descripcion,color,peso,estado,tipo,precioPrestamo);
 		listObjetos.add(nuevoObjeto);
 		return nuevoObjeto;
 
 	}
 	
-	public Prestamo crearPrestamo(int numero, LocalDate fechaPrestamo, LocalDate fechaEntrega, int valorPrestamo,
-			String estado, Cliente clienteAsociado, Empleado empleadoAsociado, List<Objeto> listaObjetosPrestar) throws PrestamoExisteException {
+	public Prestamo crearPrestamo(int codigo, String estado,int valorPrestamo,String fechaPrestamo, String fechaEntrega, 
+			 Cliente clienteAsociado, Empleado empleadoAsociado, List<Objeto> listaObjetosPrestar) throws PrestamoExisteException {
 
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un préstamo");
-		if( buscarPrestamo(numero) != null  ) {
-			throw new PrestamoExisteException("ERROR: Ya existe un préstamo con el número "+numero);
+		if( buscarPrestamo(codigo) != null  ) {
+			throw new PrestamoExisteException("ERROR: Ya existe un préstamo con el número "+codigo);
 		}
-		Prestamo nuevoPrestamo = new Prestamo(numero, fechaPrestamo, fechaEntrega, null, valorPrestamo, estado,
+		Prestamo nuevoPrestamo = new Prestamo(codigo, estado, valorPrestamo, fechaPrestamo, fechaEntrega, null,
 				empleadoAsociado, clienteAsociado, listaObjetosPrestar);
-
 		for (Objeto objeto : listaObjetosPrestar) {
 			objeto.setEstado(Objeto.ESTADO_PRESTADO);
 		}
@@ -118,22 +120,22 @@ public class Empresa implements Serializable {
 	
 	
 	// buscar
-	public Empleado buscarEmpleado(String cedulaEmpleado) {
+	public Empleado buscarEmpleado(String numeroDocumento) {
 		Seguimiento.getInstance()
-				.log("Usuario " + usuarioAutenticado.getLogin() + ", busco el empleado con cédula " + cedulaEmpleado);
+				.log("Usuario " + usuarioAutenticado.getLogin() + ", busco el empleado con cédula " +numeroDocumento);
 		for (int i = 0; i < listaEmpleados.size(); i++) {
-			if (listaEmpleados.get(i).getCedula().equals(cedulaEmpleado)) {
+			if (listaEmpleados.get(i).getNumeroDocumento().equals(numeroDocumento)) {
 				return listaEmpleados.get(i);
 			}
 		}
 		return null;
 	}
 
-	public Cliente buscarCliente(String cedulaCliente) {
+	public Cliente buscarCliente(String numeroDocumento) {
 		Seguimiento.getInstance()
-				.log("Usuario " + usuarioAutenticado.getLogin() + ", buscó el cliente con cédula " + cedulaCliente);
+				.log("Usuario " + usuarioAutenticado.getLogin() + ", buscó el cliente con cédula " + numeroDocumento);
 		for (int i = 0; i < listClientes.size(); i++) {
-			if (listClientes.get(i).getCedula().equals(cedulaCliente)) {
+			if (listClientes.get(i).getNumeroDocumento().equals(numeroDocumento)) {
 				return listClientes.get(i);
 			}
 		}
@@ -151,11 +153,11 @@ public class Empresa implements Serializable {
 		return null;
 	}
 
-	public Prestamo buscarPrestamo(int numero) {
+	public Prestamo buscarPrestamo(int codigo) {
 		Seguimiento.getInstance()
-				.log("Usuario " + usuarioAutenticado.getLogin() + ", buscó el Préstamo con código " + numero);
+				.log("Usuario " + usuarioAutenticado.getLogin() + ", buscó el Préstamo con código " + codigo);
 		for (int i = 0; i < listPrestamos.size(); i++) {
-			if (listPrestamos.get(i).getNumero().equals(numero)) {
+			if (listPrestamos.get(i).getCodigo().equals(codigo)) {
 				return listPrestamos.get(i);
 			}
 		}
@@ -164,31 +166,31 @@ public class Empresa implements Serializable {
 	
 	
 	// eliminar
-	public Cliente eliminarCliente(String cedulaCliente) throws ClienteNoExisteException {
+	public Cliente eliminarCliente(String numeroDocumento) throws ClienteNoExisteException {
 
-		Cliente clienteEliminar = buscarCliente(cedulaCliente);
+		Cliente clienteEliminar = buscarCliente(numeroDocumento);
 
 		if (clienteEliminar != null) {
 			Seguimiento.getInstance().log(
-					"Usuario " + usuarioAutenticado.getLogin() + ", eliminó el cliente con cédula " + cedulaCliente);
+					"Usuario " + usuarioAutenticado.getLogin() + ", eliminó el cliente con cédula " + numeroDocumento);
 			getListClientes().remove(clienteEliminar);
 			return clienteEliminar;
 		} 
-		throw new ClienteNoExisteException("ERROR: No existe un cliente con cédula "+cedulaCliente);
+		throw new ClienteNoExisteException("ERROR: No existe un cliente con cédula "+numeroDocumento);
 	}
 
-	public Empleado eliminarEmpleado(String cedulaEmpleado) throws EmpleadoNoExisteException {
+	public Empleado eliminarEmpleado(String numeroDocumento) throws EmpleadoNoExisteException {
 
-		Empleado empleadoEliminar = buscarEmpleado(cedulaEmpleado);
+		Empleado empleadoEliminar = buscarEmpleado(numeroDocumento);
 
 		if (empleadoEliminar != null) {
 			Seguimiento.getInstance().log(
-					"Usuario " + usuarioAutenticado.getLogin() + ", eliminó el empleado con cédula " + cedulaEmpleado);
+					"Usuario " + usuarioAutenticado.getLogin() + ", eliminó el empleado con cédula " + numeroDocumento);
 			getListaEmpleados().remove(empleadoEliminar);
 			return empleadoEliminar;
 		} 
 		
-		throw new EmpleadoNoExisteException("ERROR: No existe un empleado con cédula "+cedulaEmpleado);
+		throw new EmpleadoNoExisteException("ERROR: No existe un empleado con cédula "+numeroDocumento);
 
 	}
 
@@ -206,47 +208,67 @@ public class Empresa implements Serializable {
 
 	}
 	
-	public Prestamo eliminarPrestamo(int numero) throws PrestamoNoExisteException {
-		Prestamo prestamoEliminar = buscarPrestamo(numero);
+	public Prestamo eliminarPrestamo(int codigo) throws PrestamoNoExisteException {
+		Prestamo prestamoEliminar = buscarPrestamo(codigo);
 
 		if (prestamoEliminar != null) {
 			Seguimiento.getInstance()
-					.log("Usuario " + usuarioAutenticado.getLogin() + ", eliminó el préstamo con número " + numero);
+					.log("Usuario " + usuarioAutenticado.getLogin() + ", eliminó el préstamo con número " + codigo);
 			getListPrestamos().remove(prestamoEliminar);
 			return prestamoEliminar;
 		} 
-		throw new PrestamoNoExisteException("ERROR: No existe un préstamo con número "+numero);
+		throw new PrestamoNoExisteException("ERROR: No existe un préstamo con número "+codigo);
 	}
 
 	// Actualizar
-	public boolean actualizarCliente(String cedulaCliente, String nombre, String apellido, String direccion) throws ClienteNoExisteException {
-		Cliente cliente = buscarCliente(cedulaCliente);
+	public boolean actualizarCliente(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) throws ClienteNoExisteException {
+		Cliente cliente = buscarCliente(numeroDocumento);
 
 		if (cliente == null) {
-			throw new ClienteNoExisteException("ERROR: No existe un cliente con número de cédula"+cedulaCliente);
+			throw new ClienteNoExisteException("ERROR: No existe un cliente con número de cédula"+numeroDocumento);
 		}
 
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", actualizó un cliente");
+		
+		cliente.setTipoDocumento(tipoDocumento);
+		cliente.setNumeroDocumento(numeroDocumento);
 		cliente.setNombre(nombre);
-		cliente.setApellido(apellido);
+		cliente.setTelefonoResidencia(telefonoResidencia);
+		cliente.setTelefonoCelular(telefonoCelular);
 		cliente.setDireccion(direccion);
+		cliente.setCiudadR(ciudadR);
+		cliente.setDepartamento(departamento);
+		cliente.setPais(pais);
+		cliente.setEmail(email);
 		return true;
 	}
 
-	public boolean actualizarEmpleado(String cedulaEmpleado, String nombre, String apellido, String direccion) throws EmpleadoNoExisteException {
-		Empleado empleado = buscarEmpleado(cedulaEmpleado);
+	public boolean actualizarEmpleado(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) throws EmpleadoNoExisteException {
+		
+		Empleado empleado = buscarEmpleado(numeroDocumento);
 
 		if (empleado == null) {
-			throw new EmpleadoNoExisteException("ERROR: No existe un empleado con número de cédula"+cedulaEmpleado);
+			throw new EmpleadoNoExisteException("ERROR: No existe un empleado con número de cédula"+numeroDocumento);
 		}
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", actualizó un empleado");
+		empleado.setTipoDocumento(tipoDocumento);
+		empleado.setNumeroDocumento(numeroDocumento);
 		empleado.setNombre(nombre);
-		empleado.setApellido(apellido);
+		empleado.setTelefonoResidencia(telefonoResidencia);
+		empleado.setTelefonoCelular(telefonoCelular);
 		empleado.setDireccion(direccion);
+		empleado.setCiudadR(ciudadR);
+		empleado.setDepartamento(departamento);
+		empleado.setPais(pais);
+		empleado.setEmail(email);
+		
 		return true;
 	}
 
-	public boolean actualizarObjeto(String codigo, String nombre, String descripcion, String estado) throws ObjetoNoExisteException {
+	public boolean actualizarObjeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
+			String tipo, int precioPrestamo) throws ObjetoNoExisteException {
 
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", actualizó un objeto");
 		Objeto objeto = buscarObjeto(codigo);
@@ -256,29 +278,32 @@ public class Empresa implements Serializable {
 		}
 
 		objeto.setNombre(nombre);
-		objeto.setDescripcion(descripcion);
 		objeto.setCodigo(codigo);
+		objeto.setDescripcion(descripcion);
+		objeto.setColor(color);
 		objeto.setEstado(estado);
+		objeto.setTipo(tipo);
+		objeto.setPrecioPrestamo(precioPrestamo);
 		return true;
 	}
 
-	public boolean actualizarPrestamo(int numero, LocalDate fechaPrestamo, LocalDate fechaEntrega, int valorPrestamo,
-			String estado, Cliente clienteAsociado, Empleado empleadoAsociado, List<Objeto> listaObjetosPrestar) throws PrestamoNoExisteException {
+	public boolean actualizarPrestamo(int codigo,String estado, int valorPrestamo,String fechaPrestamo, String fechaEntrega,
+			  Empleado empleadoAsociado, Cliente clienteAsociado, List<Objeto> listaObjetosPrestar) throws PrestamoNoExisteException {
 
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", actualizó un préstamo");
-		Prestamo prestamo = buscarPrestamo(numero);
+		Prestamo prestamo = buscarPrestamo(codigo);
 
 		if (prestamo == null) {
-			throw new PrestamoNoExisteException("ERROR: No existe un préstamo con número "+numero);
+			throw new PrestamoNoExisteException("ERROR: No existe un préstamo con número "+codigo);
 		}
 
-		prestamo.setNumero(numero);
+		prestamo.setCodigo(codigo);
+		prestamo.setEstado(estado);
+		prestamo.setValorPrestamo(valorPrestamo);
 		prestamo.setFechaPrestamo(fechaPrestamo);
 		prestamo.setFechaEntrega(fechaEntrega);
-		prestamo.setValorPrestamo(valorPrestamo);
-		prestamo.setEstado(estado);
-		prestamo.setClienteAsociado(clienteAsociado);
 		prestamo.setEmpleadoAsociado(empleadoAsociado);
+		prestamo.setClienteAsociado(clienteAsociado);
 		prestamo.setListaObjetosAsociados(listaObjetosPrestar);
 		return true;
 	}

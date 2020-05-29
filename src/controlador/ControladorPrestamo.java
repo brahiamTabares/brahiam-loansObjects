@@ -1,13 +1,11 @@
 package controlador;
 
-import java.time.LocalDate;
 
 import excepciones.PrestamoExisteException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -58,9 +56,9 @@ public class ControladorPrestamo implements ControladorVentana {
 	@FXML
 	private TextField valorPrestamoText;
 	@FXML
-	private DatePicker fechaPrestamoText;
+	private TextField fechaPrestamoText;
 	@FXML
-	private DatePicker fechaEntregaText;
+	private TextField fechaEntregaText;
 	@FXML
 	private ComboBox<Empleado> empleadoAsociado;
 
@@ -92,8 +90,8 @@ public class ControladorPrestamo implements ControladorVentana {
 		numeroPrestamoText.setText("");
 		estadoPrestamoText.setText("");
 		valorPrestamoText.setText("");
-		fechaPrestamoText.setValue(LocalDate.now());
-		fechaEntregaText.setValue(LocalDate.now());
+		fechaPrestamoText.setText("");
+		fechaEntregaText.setText("");
 	}
 
 	private void inicializarTablaD() {
@@ -160,10 +158,10 @@ public class ControladorPrestamo implements ControladorVentana {
 	public void crearPrestamo() {
 
 		int numeroPrestamo = Integer.parseInt(numeroPrestamoText.getText());
-		LocalDate fechaPrestamo = fechaPrestamoText.getValue();
+		String fechaPrestamo = fechaPrestamoText.getText();
 		String estadoPrestamo = estadoPrestamoText.getText();
 		int valorPrestamo = Integer.parseInt(valorPrestamoText.getText());
-	   LocalDate fechaEntrega = fechaEntregaText.getValue();
+	   String fechaEntrega = fechaEntregaText.getText();
 		Empleado empleado = empleadoAsociado.getValue();
 		Cliente cliente = clienteAsociado.getValue();
 
