@@ -66,8 +66,8 @@ public class ControladorCrudCliente implements ControladorVentana {
 	private TextField emailText;
 	
 	
-	/*pruena 
-	 * 
+	/*
+	 *Organizar contructores  
 	 */
 	
 	private boolean nuevo = true;
@@ -169,8 +169,7 @@ public class ControladorCrudCliente implements ControladorVentana {
 		Cliente cliente;
 		if (nuevo) {
 			try {
-				cliente = ControladorEmpresa.getInstance().crearCliente(nombreText.getText(), apellidoText.getText(),
-						cedulaText.getText(), direccionTest.getText());
+				cliente = ControladorEmpresa.getInstance().crearCliente(nombreText.getText(),tipoDocumentoText.getValue(), direccionTest.getText());
 				tablaClientes.getItems().add(cliente);
 			} catch (ClienteExisteException e) {
 				AlertaUtil.mostrarMensajeError(e.getMessage());
