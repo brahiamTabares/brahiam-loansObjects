@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "persona")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Persona {
-
+//bebe
 	
 	private String tipoDocumento;
 	private String numeroDocumento;
