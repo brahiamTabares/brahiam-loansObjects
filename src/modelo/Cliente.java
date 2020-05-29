@@ -17,7 +17,7 @@ public class Cliente extends Persona implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private List<Prestamo> listaPrestamosAsociados = new ArrayList<>();
-
+	private String profesion;
 	public Cliente() {
 		super();
 	}
@@ -26,7 +26,8 @@ public class Cliente extends Persona implements Serializable {
 			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,String profesion, String email) {
 		
 		super(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
-				departamento, pais, profesion, email);
+				departamento, pais,email);
+		this.profesion=profesion;
 	}
 
 	public List<Prestamo> getListaPrestamosAsociados() {
@@ -35,6 +36,14 @@ public class Cliente extends Persona implements Serializable {
 
 	public void setListaPrestamosAsociados(List<Prestamo> listaPrestamosAsociados) {
 		this.listaPrestamosAsociados = listaPrestamosAsociados;
+	}
+
+	public String getProfesion() {
+		return profesion;
+	}
+
+	public void setProfesion(String profesion) {
+		this.profesion = profesion;
 	}
 	
 

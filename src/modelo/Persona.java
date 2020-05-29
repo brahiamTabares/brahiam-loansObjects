@@ -18,14 +18,13 @@ public class Persona {
 	private String ciudadR;
 	private String Departamento;
 	private String pais;
-	private String profesion;
 	private String email;
 
 	public Persona() {
 
 	}
 	public Persona(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
-			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,String profesion, String email) {
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) {
 		super();
 		this.tipoDocumento = tipoDocumento;
 		this.numeroDocumento = numeroDocumento;
@@ -36,7 +35,7 @@ public class Persona {
 		this.ciudadR = ciudadR;
 		Departamento = departamento;
 		this.pais = pais;
-		this.profesion= profesion;
+		
 		this.email = email;
 	}
 
@@ -128,11 +127,6 @@ public class Persona {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getProfesion() {
-		return profesion;
-	}
-	public void setProfesion(String profesion) {
-		this.profesion = profesion;
-	}
+
 
 }

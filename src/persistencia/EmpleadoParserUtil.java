@@ -6,8 +6,10 @@ public class EmpleadoParserUtil {
 	private static final String SEPARADOR = ",";
 
 	public static String toString(Empleado empleado) {
-		return empleado.getCedula() + SEPARADOR + empleado.getNombre() + SEPARADOR + empleado.getApellido() + SEPARADOR
-				+ empleado.getDireccion();
+		return empleado.getNombre() + SEPARADOR + empleado.getTipoDocumento() + SEPARADOR + empleado.getNumeroDocumento()
+		+ SEPARADOR + empleado.getTelefonoResidencia()+ SEPARADOR +empleado.getTelefonoCelular()+ SEPARADOR +
+		empleado.getDireccion()+ SEPARADOR + empleado.getCiudadR()+ SEPARADOR +empleado.getDepartamento()+ SEPARADOR +
+		empleado.getPais()+ SEPARADOR +empleado.getTipoEmpleado()+ SEPARADOR +empleado.getEmail();
 	}
 
 	public static Empleado parse(String texto) {
@@ -17,7 +19,8 @@ public class EmpleadoParserUtil {
 		// crear un arreglo arreglo = { "123","sandra","quintero","gaviota" } 
 		String[] arreglo = texto.split(SEPARADOR);
 		
-		Empleado empleado = new Empleado(arreglo[1],arreglo[2], arreglo[0],arreglo[3]);
+		Empleado empleado = new Empleado(arreglo[0],arreglo[1], arreglo[2],arreglo[3], arreglo[4], arreglo[5], arreglo[6], arreglo[7],
+				arreglo[8], arreglo[9], arreglo[10]);
 		return empleado;
 	}
 }

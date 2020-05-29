@@ -63,24 +63,24 @@ public class Empresa implements Serializable {
 
 	// Crear
 	public Cliente crearCliente(String tipoDocumento,String numeroDocumento,String nombre,String telefonoResidencia,
-			String telefonoCelular,String direccion,String ciudadR,String departamento,String pais,String email) throws ClienteExisteException {
+			String telefonoCelular,String direccion,String ciudadR,String departamento,String pais, String profesion, String email) throws ClienteExisteException {
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un cliente ");
 		if( buscarCliente(numeroDocumento) != null  ) {
 			throw new ClienteExisteException("ERROR: Ya existe un cliente con cédula "+numeroDocumento);
 		}
-		Cliente nuevoCliente = new Cliente(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR, departamento, pais, email);
+		Cliente nuevoCliente = new Cliente(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR, departamento, pais,profesion, email);
 		listClientes.add(nuevoCliente);
 		return nuevoCliente;
 	}
 
 	public Empleado crearEmpleado(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
-			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) throws EmpleadoExisteException {
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String tipoEmpleado, String email) throws EmpleadoExisteException {
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un empleado ");
 		if( buscarEmpleado(numeroDocumento) != null  ) {
-			throw new EmpleadoExisteException("ERROR: Ya existe un empleado con cédula "+numeroDocumento);
+			throw new EmpleadoExisteException("ERROR: Ya existe un empleado con c�dula "+numeroDocumento);
 		}
 		Empleado nuevoEmpleado = new Empleado(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
-				departamento, pais, email);
+				departamento, pais,tipoEmpleado, email);
 		listaEmpleados.add(nuevoEmpleado);
 		return nuevoEmpleado;
 
@@ -88,9 +88,9 @@ public class Empresa implements Serializable {
 
 	public Objeto crearObjeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
 			String tipo, int precioPrestamo) throws ObjetoExisteException {
-		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un objeto ");
+		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", cre� un objeto ");
 		if( buscarObjeto(codigo) != null  ) {
-			throw new ObjetoExisteException("ERROR: Ya existe un objeto con código "+codigo);
+			throw new ObjetoExisteException("ERROR: Ya existe un objeto con c�digo "+codigo);
 		}
 		Objeto nuevoObjeto = new Objeto(nombre,codigo,descripcion,color,peso,estado,tipo,precioPrestamo);
 		listObjetos.add(nuevoObjeto);
@@ -101,7 +101,7 @@ public class Empresa implements Serializable {
 	public Prestamo crearPrestamo(int codigo, String estado,int valorPrestamo,String fechaPrestamo, String fechaEntrega, 
 			 Cliente clienteAsociado, Empleado empleadoAsociado, List<Objeto> listaObjetosPrestar) throws PrestamoExisteException {
 
-		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un préstamo");
+		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", cre� un pr�stamo");
 		if( buscarPrestamo(codigo) != null  ) {
 			throw new PrestamoExisteException("ERROR: Ya existe un préstamo con el número "+codigo);
 		}

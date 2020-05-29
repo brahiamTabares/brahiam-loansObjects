@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "empleado")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Empleado extends Persona implements Serializable {
-	// prueba
+
 
 	private static final long serialVersionUID = 1L;
 	private  String tipoEmpleado;
@@ -22,10 +22,11 @@ public class Empleado extends Persona implements Serializable {
 	}
 
 	public Empleado(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
-			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) {
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,String tipoEmpleado,String email) {
 		  
 		super(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
 				departamento, pais, email);
+		this.tipoEmpleado=tipoEmpleado;
 	}
 	public Empleado(String tipoEmpleado) {
 		

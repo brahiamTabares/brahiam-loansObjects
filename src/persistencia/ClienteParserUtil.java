@@ -6,8 +6,13 @@ public class ClienteParserUtil {
 	private static final String SEPARADOR = ",";
 
 	public static String toString(Cliente cliente) {
-		return cliente.getCedula() + SEPARADOR + cliente.getNombre() + SEPARADOR + cliente.getApellido() + SEPARADOR
-				+ cliente.getDireccion();
+		
+		return cliente.getNombre() + SEPARADOR + cliente.getTipoDocumento() + SEPARADOR + cliente.getNumeroDocumento()
+				+ SEPARADOR + cliente.getTelefonoResidencia()+ SEPARADOR +cliente.getTelefonoCelular()+ SEPARADOR +
+				cliente.getDireccion()+ SEPARADOR + cliente.getCiudadR()+ SEPARADOR +cliente.getDepartamento()+ SEPARADOR +
+				cliente.getPais()+ SEPARADOR +cliente.getProfesion()+ SEPARADOR +cliente.getEmail();
+				
+
 	}
 
 	public static Cliente parse(String texto) {
@@ -17,7 +22,8 @@ public class ClienteParserUtil {
 		// crear un arreglo arreglo = { "123","sandra","quintero","gaviota" } 
 		String[] arreglo = texto.split(SEPARADOR);
 		
-		Cliente cliente = new Cliente(arreglo[1],arreglo[2], arreglo[0],arreglo[3], texto, texto, texto, texto, texto, texto, texto);
+		Cliente cliente = new Cliente(arreglo[0],arreglo[1], arreglo[2],arreglo[3], arreglo[4], arreglo[5], arreglo[6], arreglo[7],
+				arreglo[8], arreglo[9], arreglo[10]);
 		return cliente;
 	}
 }

@@ -2,20 +2,14 @@
 <clientes>
     <cliente>
         <nombre>Simelemon</nombre>
-        <apellido>Tolomeo</apellido>
-        <cedula>7522062</cedula>
         <direccion>Los Caños Mz 15 - 12</direccion>
     </cliente>
     <cliente>
         <nombre>Casimiro</nombre>
-        <apellido>Buenavista</apellido>
-        <cedula>1094904723</cedula>
         <direccion>Monte Negro 4a</direccion>
     </cliente>
     <cliente>
         <nombre>Rosa</nombre>
-        <apellido>Melano</apellido>
-        <cedula>41908345</cedula>
         <direccion>La Fuga Mz 2 # 8</direccion>
     </cliente>
 </clientes>
