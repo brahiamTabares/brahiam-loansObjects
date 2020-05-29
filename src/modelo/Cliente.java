@@ -22,10 +22,10 @@ public class Cliente extends Persona implements Serializable {
 		super();
 	}
 
-	public Cliente( String nombre,String tipoDocumento, String numeroDocumento,  String telefonoResidencia,
+	public Cliente(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
 			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,String profesion, String email) {
 		
-		super(nombre,tipoDocumento, numeroDocumento,  telefonoResidencia, telefonoCelular, direccion, ciudadR,
+		super(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
 				departamento, pais,email);
 		this.profesion=profesion;
 	}

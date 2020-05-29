@@ -43,10 +43,9 @@ public class ControladorEmpresa {
 
 	}
 
-	public Cliente crearCliente(String nombre,String tipoDocumento, String numeroDocumento,  String telefonoResidencia,
-			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,String profesion, String email) throws ClienteExisteException {
+	public Cliente crearCliente(String nombre, String apellido, String cedula, String direccion) throws ClienteExisteException {
 
-		return empresa.crearCliente( nombre, tipoDocumento,  numeroDocumento,   telefonoResidencia, telefonoCelular,  direccion,  ciudadR,  departamento,  pais, profesion,  email);
+		return empresa.crearCliente(nombre, apellido, cedula, direccion);
 
 	}
 
@@ -62,10 +61,9 @@ public class ControladorEmpresa {
 
 	}
 
-	public void actualizarCliente(String nombre,String tipoDocumento, String numeroDocumento,  String telefonoResidencia,
-			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,String profesion, String email) throws ClienteNoExisteException {
+	public void actualizarCliente(String cedulaCliente, String nombre, String apellido, String direccion) throws ClienteNoExisteException {
 
-		empresa.actualizarCliente(nombre, tipoDocumento,  numeroDocumento,   telefonoResidencia, telefonoCelular,  direccion,  ciudadR,  departamento,  pais, profesion,  email);
+		empresa.actualizarCliente(cedulaCliente, nombre, apellido, direccion);
 
 	}
 

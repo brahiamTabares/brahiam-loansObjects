@@ -62,24 +62,24 @@ public class Empresa implements Serializable {
 	}
 
 	// Crear
-	public Cliente crearCliente(String nombre,String tipoDocumento,String numeroDocumento,String telefonoResidencia,
+	public Cliente crearCliente(String tipoDocumento,String numeroDocumento,String nombre,String telefonoResidencia,
 			String telefonoCelular,String direccion,String ciudadR,String departamento,String pais, String profesion, String email) throws ClienteExisteException {
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un cliente ");
 		if( buscarCliente(numeroDocumento) != null  ) {
 			throw new ClienteExisteException("ERROR: Ya existe un cliente con cédula "+numeroDocumento);
 		}
-		Cliente nuevoCliente = new Cliente(nombre,tipoDocumento, numeroDocumento,  telefonoResidencia, telefonoCelular, direccion, ciudadR, departamento, pais,profesion, email);
+		Cliente nuevoCliente = new Cliente(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR, departamento, pais,profesion, email);
 		listClientes.add(nuevoCliente);
 		return nuevoCliente;
 	}
 
-	public Empleado crearEmpleado(String nombre,String tipoDocumento, String numeroDocumento,  String telefonoResidencia,
+	public Empleado crearEmpleado(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
 			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String tipoEmpleado, String email) throws EmpleadoExisteException {
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un empleado ");
 		if( buscarEmpleado(numeroDocumento) != null  ) {
 			throw new EmpleadoExisteException("ERROR: Ya existe un empleado con c�dula "+numeroDocumento);
 		}
-		Empleado nuevoEmpleado = new Empleado( nombre,tipoDocumento, numeroDocumento, telefonoResidencia, telefonoCelular, direccion, ciudadR,
+		Empleado nuevoEmpleado = new Empleado(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
 				departamento, pais,tipoEmpleado, email);
 		listaEmpleados.add(nuevoEmpleado);
 		return nuevoEmpleado;
@@ -225,8 +225,8 @@ public class Empresa implements Serializable {
 	}
 
 	// Actualizar
-	public boolean actualizarCliente(String nombre,String tipoDocumento, String numeroDocumento,  String telefonoResidencia,
-			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,String profesion, String email) throws ClienteNoExisteException {
+	public boolean actualizarCliente(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) throws ClienteNoExisteException {
 		Cliente cliente = buscarCliente(numeroDocumento);
 
 		if (cliente == null) {
@@ -234,9 +234,10 @@ public class Empresa implements Serializable {
 		}
 
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", actualizó un cliente");
-		cliente.setNombre(nombre);
+		
 		cliente.setTipoDocumento(tipoDocumento);
 		cliente.setNumeroDocumento(numeroDocumento);
+		cliente.setNombre(nombre);
 		cliente.setTelefonoResidencia(telefonoResidencia);
 		cliente.setTelefonoCelular(telefonoCelular);
 		cliente.setDireccion(direccion);
@@ -247,7 +248,7 @@ public class Empresa implements Serializable {
 		return true;
 	}
 
-	public boolean actualizarEmpleado( String nombre,String tipoDocumento, String numeroDocumento, String telefonoResidencia,
+	public boolean actualizarEmpleado(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
 			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) throws EmpleadoNoExisteException {
 		
 		Empleado empleado = buscarEmpleado(numeroDocumento);
@@ -256,9 +257,9 @@ public class Empresa implements Serializable {
 			throw new EmpleadoNoExisteException("ERROR: No existe un empleado con número de cédula"+numeroDocumento);
 		}
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", actualizó un empleado");
-		empleado.setNombre(nombre);
 		empleado.setTipoDocumento(tipoDocumento);
 		empleado.setNumeroDocumento(numeroDocumento);
+		empleado.setNombre(nombre);
 		empleado.setTelefonoResidencia(telefonoResidencia);
 		empleado.setTelefonoCelular(telefonoCelular);
 		empleado.setDireccion(direccion);
