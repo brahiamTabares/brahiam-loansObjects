@@ -22,7 +22,9 @@ import persistencia.PersistenciaComas;
 import persistencia.PersistenciaXML;
 import persistencia.Prestamos;
 import persistencia.Usuarios;
-
+/*
+ * prueba
+ */
 public class Empresa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
