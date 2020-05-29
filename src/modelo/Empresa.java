@@ -87,12 +87,12 @@ public class Empresa implements Serializable {
 	}
 
 	public Objeto crearObjeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
-			String tipo, int precioPrestamo) throws ObjetoExisteException {
+			String tipo, String valorUnitario,String valorTotal) throws ObjetoExisteException {
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creÛ un objeto ");
 		if( buscarObjeto(codigo) != null  ) {
 			throw new ObjetoExisteException("ERROR: Ya existe un objeto con cÛdigo "+codigo);
 		}
-		Objeto nuevoObjeto = new Objeto(nombre,codigo,descripcion,color,peso,estado,tipo,precioPrestamo);
+		Objeto nuevoObjeto = new Objeto(nombre,codigo,descripcion,color,peso,estado,tipo,valorUnitario,valorTotal);
 		listObjetos.add(nuevoObjeto);
 		return nuevoObjeto;
 
@@ -106,7 +106,7 @@ public class Empresa implements Serializable {
 			throw new PrestamoExisteException("ERROR: Ya existe un pr√©stamo con el n√∫mero "+codigo);
 		}
 		Prestamo nuevoPrestamo = new Prestamo(codigo, estado, valorPrestamo, fechaPrestamo, fechaEntrega, null,
-				empleadoAsociado, clienteAsociado, listaObjetosPrestar);
+				 clienteAsociado,empleadoAsociado, listaObjetosPrestar);
 		for (Objeto objeto : listaObjetosPrestar) {
 			objeto.setEstado(Objeto.ESTADO_PRESTADO);
 		}
@@ -268,13 +268,13 @@ public class Empresa implements Serializable {
 	}
 
 	public boolean actualizarObjeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
-			String tipo, int precioPrestamo) throws ObjetoNoExisteException {
+			String tipo, String valorUnitario,String valorTotal) throws ObjetoNoExisteException {
 
-		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", actualiz√≥ un objeto");
+		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", Se actualizo un objeto");
 		Objeto objeto = buscarObjeto(codigo);
 
 		if (objeto == null) {
-			throw new ObjetoNoExisteException("ERROR: No existe un objeto con c√≥digo"+codigo);
+			throw new ObjetoNoExisteException("ERROR: No existe un objeto con cÛdigo"+codigo);
 		}
 
 		objeto.setNombre(nombre);
@@ -283,7 +283,9 @@ public class Empresa implements Serializable {
 		objeto.setColor(color);
 		objeto.setEstado(estado);
 		objeto.setTipo(tipo);
-		objeto.setPrecioPrestamo(precioPrestamo);
+		objeto.setValorUnitario(valorUnitario);
+		objeto.setValorTotal(valorTotal);
+		
 		return true;
 	}
 

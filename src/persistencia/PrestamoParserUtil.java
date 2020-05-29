@@ -6,10 +6,10 @@ public class PrestamoParserUtil {
 	private static final String SEPARADOR = "@@";
 
 	public static String toString(Prestamo prestamo) {
-		return prestamo.getNumero()+ SEPARADOR + prestamo.getEstado() + SEPARADOR
+		return prestamo.getCodigo()+ SEPARADOR + prestamo.getEstado() + SEPARADOR
 				+ prestamo.getValorPrestamo() + SEPARADOR + prestamo.getFechaPrestamo() + SEPARADOR
-				+ prestamo.getFechaEntrega() + SEPARADOR + prestamo.getClienteAsociado().getCedula() + SEPARADOR
-				+ prestamo.getEmpleadoAsociado().getCedula();
+				+ prestamo.getFechaEntrega() + SEPARADOR + prestamo.getClienteAsociado().getNumeroDocumento() + SEPARADOR
+				+ prestamo.getEmpleadoAsociado().getNumeroDocumento();
 	}
 
 	public static Prestamo parse(String texto) {

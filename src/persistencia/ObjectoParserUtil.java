@@ -17,7 +17,7 @@ public class ObjectoParserUtil {
 		// crear un arreglo arreglo = { "123","sandra","quintero","gaviota" } 
 		String[] arreglo = texto.split(SEPARADOR);
 		
-		Objeto objeto = new Objeto(arreglo[1],arreglo[2], arreglo[0],arreglo[3]);
+		Objeto objeto = new Objeto(arreglo[0],arreglo[1], arreglo[2],arreglo[3], arreglo[4], arreglo[5], arreglo[6], arreglo[7],arreglo[8]);
 		return objeto;
 }
 }

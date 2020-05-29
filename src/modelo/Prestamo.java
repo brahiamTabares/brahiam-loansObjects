@@ -20,8 +20,8 @@ public class Prestamo implements Serializable {
 	private String fechaPrestamo;
 	private String fechaEntrega;
 	private String numeroObjetoPrestado;
-	private Empleado empleadoAsociado;
 	private Cliente clienteAsociado;
+	private Empleado empleadoAsociado;	
 	private List<Objeto> listaObjetosAsociados = new ArrayList<>();
 
 	public Prestamo() {
@@ -29,7 +29,7 @@ public class Prestamo implements Serializable {
 	}
 
 	public Prestamo(int codigo, String estado, int valorPrestamo, String fechaPrestamo, String fechaEntrega,
-			String numeroObjetoPrestado, Empleado empleadoAsociado, Cliente clienteAsociado,
+			String numeroObjetoPrestado,  Cliente clienteAsociado,Empleado empleadoAsociado,
 			List<Objeto> listaObjetosAsociados) {
 		this.codigo = codigo;
 		this.estado = estado;

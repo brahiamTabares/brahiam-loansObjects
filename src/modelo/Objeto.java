@@ -26,14 +26,15 @@ public class Objeto implements Serializable {
 	private String peso;
 	private String estado;
 	private String tipo;
-	private int precioPrestamo;
+	private String valorUnitario;
+	private String valorTotal;
 	private Prestamo prestamoAsociado;
 
 	public Objeto() {
 	}
 
 	public Objeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
-			String tipo, int precioPrestamo) {
+			String tipo,String valorUnitario,String valorTotal ) {
 		this.nombre = nombre;
 		this.codigo = codigo;
 		this.descripcion = descripcion;
@@ -41,7 +42,8 @@ public class Objeto implements Serializable {
 		this.peso = peso;
 		this.estado = estado;
 		this.tipo = tipo;
-		this.precioPrestamo = precioPrestamo;
+		this.valorUnitario=valorUnitario;
+		this.valorTotal=valorTotal;
 
 	}
 
@@ -109,12 +111,21 @@ public class Objeto implements Serializable {
 		this.tipo = tipo;
 	}
 
-	public int getPrecioPrestamo() {
-		return precioPrestamo;
+
+	public String getValorUnitario() {
+		return valorUnitario;
 	}
 
-	public void setPrecioPrestamo(int precioPrestamo) {
-		this.precioPrestamo = precioPrestamo;
+	public void setValorUnitario(String valorUnitario) {
+		this.valorUnitario = valorUnitario;
+	}
+
+	public String getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(String valorTotal) {
+		this.valorTotal = valorTotal;
 	}
 
 }
