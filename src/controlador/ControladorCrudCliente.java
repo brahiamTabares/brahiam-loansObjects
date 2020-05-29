@@ -66,13 +66,21 @@ public class ControladorCrudCliente implements ControladorVentana {
 	private TextField emailText;
 	
 	
-	
+	/*pruena 
+	 * 
+	 */
 	
 	private boolean nuevo = true;
 
 	@FXML
 	private void initialize() {
+		
+		
+		inicializarTabla();
+		inicializarTipoDocumento();
 
+	}
+		private void inicializarTabla() {
 		ControladorPrincipal.registrarControladorVentana(this);
 
 		nombreColumn.setCellValueFactory(new PropertyValueFactory<Cliente, String>("nombre"));
@@ -118,17 +126,19 @@ public class ControladorCrudCliente implements ControladorVentana {
 			
 			
 		} else {
-		    tipoDocumentoList.getSelectionModel().clearSelection();
-			cedulaText.setText("");
+			
 			nombreText.setText("");
-			direccionText.setText("");
+		    tipoDocumentoText.getSelectionModel().clearSelection();
+			numeroDText.setText("");
 			telefonoText.setText("");
 			celularText.setText("");
-			ciudadText.setText("");
+			direccionTest.setText("");
+			celularText.setText("");
 			departamentoText.setText("");
 			paisText.setText("");
-			emailText.setText("");
 			profesionText.setText("");
+			emailText.setText("");
+			
 			
 			nuevo = true;
 			tablaClientes.getSelectionModel().clearSelection();
@@ -137,7 +147,17 @@ public class ControladorCrudCliente implements ControladorVentana {
 		
 		tablaClientes.refresh();
 	}
-	
+	private void inicializarTipoDocumento() {
+		
+        tipoDocumentoText.getItems().add(Cliente.getTipoContraseña());	
+		tipoDocumentoText.getItems().add(Cliente.getTipoCedula());
+        tipoDocumentoText.getItems().add(Cliente.getTipoTarjeta());
+		tipoDocumentoText.getItems().add(Cliente.getTipoExtranjera());
+		
+	}
+	/*
+	 
+	 */
 
 	@FXML
 	public void agregarCliente() {

@@ -87,7 +87,11 @@ public class Empresa implements Serializable {
 	}
 
 	public Objeto crearObjeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
+<<<<<<< HEAD
+			String tipo, int precioPrestamo) throws ObjetoExisteException {
+=======
 			String tipo, String valorUnitario,String valorTotal) throws ObjetoExisteException {
+>>>>>>> branch 'master' of https://github.com/brahiamTabares/brahiam-loansObjects.git
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un objeto ");
 		if( buscarObjeto(codigo) != null  ) {
 			throw new ObjetoExisteException("ERROR: Ya existe un objeto con código "+codigo);
