@@ -7,15 +7,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "persona")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Persona {
-<<<<<<< HEAD
+
 	private static final String TIPO_CONTRASEÑA="Contraseña de identidad";
     private static  final String TIPO_CEDULA="Cedula de ciudadania ";
     private static  final String TIPO_TARJETA="Tarjeta de identidad"; 
     private static final  String TIPO_EXTRANJERA= "Cedula extranjera";
-=======
-//bebe
-	
->>>>>>> branch 'master' of https://github.com/brahiamTabares/brahiam-loansObjects.git
+
 	private String tipoDocumento;
 	private String numeroDocumento;
 	private String nombre;
@@ -135,7 +132,6 @@ public class Persona {
 		this.email = email;
 	}
 
-<<<<<<< HEAD
 	public static String getTipoContraseña() {
 		return TIPO_CONTRASEÑA;
 	}
@@ -149,7 +145,6 @@ public class Persona {
 		return TIPO_EXTRANJERA;
 	}
 
-=======
->>>>>>> branch 'master' of https://github.com/brahiamTabares/brahiam-loansObjects.git
+
 
 }

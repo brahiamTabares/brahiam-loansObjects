@@ -77,7 +77,7 @@ public class Empresa implements Serializable {
 			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String tipoEmpleado, String email) throws EmpleadoExisteException {
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creÃ³ un empleado ");
 		if( buscarEmpleado(numeroDocumento) != null  ) {
-			throw new EmpleadoExisteException("ERROR: Ya existe un empleado con cédula "+numeroDocumento);
+			throw new EmpleadoExisteException("ERROR: Ya existe un empleado con cï¿½dula "+numeroDocumento);
 		}
 		Empleado nuevoEmpleado = new Empleado(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
 				departamento, pais,tipoEmpleado, email);
@@ -87,14 +87,14 @@ public class Empresa implements Serializable {
 	}
 
 	public Objeto crearObjeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
-<<<<<<< HEAD
+
 			String tipo, int precioPrestamo) throws ObjetoExisteException {
-=======
+
 			String tipo, String valorUnitario,String valorTotal) throws ObjetoExisteException {
->>>>>>> branch 'master' of https://github.com/brahiamTabares/brahiam-loansObjects.git
-		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un objeto ");
+
+		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creï¿½ un objeto ");
 		if( buscarObjeto(codigo) != null  ) {
-			throw new ObjetoExisteException("ERROR: Ya existe un objeto con código "+codigo);
+			throw new ObjetoExisteException("ERROR: Ya existe un objeto con cï¿½digo "+codigo);
 		}
 		Objeto nuevoObjeto = new Objeto(nombre,codigo,descripcion,color,peso,estado,tipo,valorUnitario,valorTotal);
 		listObjetos.add(nuevoObjeto);
@@ -105,7 +105,7 @@ public class Empresa implements Serializable {
 	public Prestamo crearPrestamo(int codigo, String estado,int valorPrestamo,String fechaPrestamo, String fechaEntrega, 
 			 Cliente clienteAsociado, Empleado empleadoAsociado, List<Objeto> listaObjetosPrestar) throws PrestamoExisteException {
 
-		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un préstamo");
+		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creï¿½ un prï¿½stamo");
 		if( buscarPrestamo(codigo) != null  ) {
 			throw new PrestamoExisteException("ERROR: Ya existe un prÃ©stamo con el nÃºmero "+codigo);
 		}
@@ -278,7 +278,7 @@ public class Empresa implements Serializable {
 		Objeto objeto = buscarObjeto(codigo);
 
 		if (objeto == null) {
-			throw new ObjetoNoExisteException("ERROR: No existe un objeto con código"+codigo);
+			throw new ObjetoNoExisteException("ERROR: No existe un objeto con cï¿½digo"+codigo);
 		}
 
 		objeto.setNombre(nombre);
