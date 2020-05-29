@@ -88,9 +88,9 @@ public class Empresa implements Serializable {
 
 	public Objeto crearObjeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
 
-			String tipo, int precioPrestamo) throws ObjetoExisteException {
-
 			String tipo, String valorUnitario,String valorTotal) throws ObjetoExisteException {
+
+			
 
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", cre� un objeto ");
 		if( buscarObjeto(codigo) != null  ) {
