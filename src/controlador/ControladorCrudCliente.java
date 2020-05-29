@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import modelo.Cliente;
 
-
 public class ControladorCrudCliente implements ControladorVentana {
 
 	private ObservableList<Cliente> clienteData = FXCollections.observableArrayList();
@@ -29,7 +28,7 @@ public class ControladorCrudCliente implements ControladorVentana {
 	private TableColumn<Cliente, String> telefonoColumn;
 	@FXML
 	private TableColumn<Cliente, String> celularColumn;
-	
+
 	@FXML
 	private TableColumn<Cliente, String> direccionColumn;
 	@FXML
@@ -51,7 +50,7 @@ public class ControladorCrudCliente implements ControladorVentana {
 	@FXML
 	private TextField telefonoText;
 	@FXML
-	private TextField  celularText;
+	private TextField celularText;
 	@FXML
 	private TextField direccionTest;
 	@FXML
@@ -59,28 +58,27 @@ public class ControladorCrudCliente implements ControladorVentana {
 	@FXML
 	private TextField departamentoText;
 	@FXML
-	private TextField  paisText;
+	private TextField paisText;
 	@FXML
 	private TextField profesionText;
 	@FXML
 	private TextField emailText;
-	
-	
+
 	/*
-	 *Organizar contructores  
+	 * Organizar contructores
 	 */
-	
+
 	private boolean nuevo = true;
 
 	@FXML
 	private void initialize() {
-		
-		
+
 		inicializarTabla();
 		inicializarTipoDocumento();
 
 	}
-		private void inicializarTabla() {
+
+	private void inicializarTabla() {
 		ControladorPrincipal.registrarControladorVentana(this);
 
 		nombreColumn.setCellValueFactory(new PropertyValueFactory<Cliente, String>("nombre"));
@@ -91,8 +89,8 @@ public class ControladorCrudCliente implements ControladorVentana {
 		direccionColumn.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Direccion"));
 		departamentoColumn.setCellValueFactory(new PropertyValueFactory<Cliente, String>("departamento"));
 		paisColumn.setCellValueFactory(new PropertyValueFactory<Cliente, String>("pais"));
-	    profesionColumn.setCellValueFactory(new PropertyValueFactory<Cliente, String>("profesion"));
-	    emailColumn.setCellValueFactory(new PropertyValueFactory<Cliente, String>("email"));
+		profesionColumn.setCellValueFactory(new PropertyValueFactory<Cliente, String>("profesion"));
+		emailColumn.setCellValueFactory(new PropertyValueFactory<Cliente, String>("email"));
 		clienteData = FXCollections.observableArrayList(ControladorEmpresa.getInstance().listarClientles());
 		tablaClientes.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
 			showClientDetails(newValue);
@@ -123,12 +121,11 @@ public class ControladorCrudCliente implements ControladorVentana {
 			paisText.setText(cliente.getPais());
 			profesionText.setText(cliente.getProfesion());
 			emailText.setText(cliente.getEmail());
-			
-			
+
 		} else {
-			
+
 			nombreText.setText("");
-		    tipoDocumentoText.getSelectionModel().clearSelection();
+			tipoDocumentoText.getSelectionModel().clearSelection();
 			numeroDText.setText("");
 			telefonoText.setText("");
 			celularText.setText("");
@@ -138,22 +135,22 @@ public class ControladorCrudCliente implements ControladorVentana {
 			paisText.setText("");
 			profesionText.setText("");
 			emailText.setText("");
-			
-			
+
 			nuevo = true;
 			tablaClientes.getSelectionModel().clearSelection();
-			
+
 		}
-		
+
 		tablaClientes.refresh();
 	}
+
 	private void inicializarTipoDocumento() {
-		
-        tipoDocumentoText.getItems().add(Cliente.getTipoContrasenia());	
+
+		tipoDocumentoText.getItems().add(Cliente.getTipoContrasenia());
 		tipoDocumentoText.getItems().add(Cliente.getTipoCedula());
-        tipoDocumentoText.getItems().add(Cliente.getTipoTarjeta());
+		tipoDocumentoText.getItems().add(Cliente.getTipoTarjeta());
 		tipoDocumentoText.getItems().add(Cliente.getTipoExtranjera());
-		
+
 	}
 	/*
 	 
@@ -169,7 +166,12 @@ public class ControladorCrudCliente implements ControladorVentana {
 		Cliente cliente;
 		if (nuevo) {
 			try {
-				cliente = ControladorEmpresa.getInstance().crearCliente(nombreText.getText(),tipoDocumentoText.getValue(), direccionTest.getText());
+				cliente = ControladorEmpresa.getInstance().crearCliente(nombreText.getText(),
+						tipoDocumentoText.getValue(), numeroDText.getText(), telefonoText.getText(),
+						celularText.getText(),direccionTest.getText(), ciudadRText.getText(), departamentoText.getText(), paisText.getText(),
+						profesionText.getText(), emailText.getText());
+				
+				
 				tablaClientes.getItems().add(cliente);
 			} catch (ClienteExisteException e) {
 				AlertaUtil.mostrarMensajeError(e.getMessage());
@@ -177,8 +179,10 @@ public class ControladorCrudCliente implements ControladorVentana {
 
 		} else {
 			try {
-				ControladorEmpresa.getInstance().actualizarCliente(cedulaText.getText(), nombreText.getText(),
-						apellidoText.getText(), direccionTest.getText());
+				ControladorEmpresa.getInstance().actualizarCliente(nombreText.getText(),
+						tipoDocumentoText.getValue(), numeroDText.getText(), telefonoText.getText(),
+						celularText.getText(),direccionTest.getText(), ciudadRText.getText(), departamentoText.getText(), paisText.getText(),
+						profesionText.getText(), emailText.getText());
 
 			} catch (ClienteNoExisteException e) {
 				AlertaUtil.mostrarMensajeError(e.getMessage());
@@ -192,7 +196,7 @@ public class ControladorCrudCliente implements ControladorVentana {
 	@FXML
 	public void eliminarCliente() {
 		try {
-			Cliente cliente = ControladorEmpresa.getInstance().eliminarCliente(cedulaText.getText());
+			Cliente cliente = ControladorEmpresa.getInstance().eliminarCliente(numeroDText.getText());
 			tablaClientes.getItems().remove(cliente);
 		} catch (ClienteNoExisteException e) {
 			AlertaUtil.mostrarMensajeError(e.getMessage());

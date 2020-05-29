@@ -21,10 +21,10 @@ public class Empleado extends Persona implements Serializable {
 		super();
 	}
 
-	public Empleado(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
+	public Empleado( String nombre,String tipoDocumento, String numeroDocumento, String telefonoResidencia,
 			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,String tipoEmpleado,String email) {
 		  
-		super(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
+		super(nombre,tipoDocumento, numeroDocumento,  telefonoResidencia, telefonoCelular, direccion, ciudadR,
 				departamento, pais, email);
 		this.tipoEmpleado=tipoEmpleado;
 	}

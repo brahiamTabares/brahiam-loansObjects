@@ -43,9 +43,12 @@ public class ControladorEmpresa {
 
 	}
 
-	public Cliente crearCliente(String nombre, String apellido, String cedula, String direccion) throws ClienteExisteException {
+	public Cliente crearCliente(String nombre, String tipoDocumento, String numeroDocumento, String telefonoResidencia,
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,
+			String profesion, String email) throws ClienteExisteException {
 
-		return empresa.crearCliente(nombre, apellido, cedula, direccion);
+		return empresa.crearCliente(nombre, tipoDocumento, numeroDocumento, telefonoResidencia, telefonoCelular,
+				direccion, ciudadR, departamento, pais, profesion, email);
 
 	}
 
@@ -61,9 +64,12 @@ public class ControladorEmpresa {
 
 	}
 
-	public void actualizarCliente(String cedulaCliente, String nombre, String apellido, String direccion) throws ClienteNoExisteException {
+	public void actualizarCliente(String nombre, String tipoDocumento, String numeroDocumento, String telefonoResidencia,
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,
+			String profesion, String email)
+			throws ClienteNoExisteException {
 
-		empresa.actualizarCliente(cedulaCliente, nombre, apellido, direccion);
+		empresa.actualizarCliente(nombre,tipoDocumento, numeroDocumento,  telefonoResidencia, telefonoCelular, direccion, ciudadR, departamento, pais, email);
 
 	}
 
@@ -85,9 +91,12 @@ public class ControladorEmpresa {
 
 	}
 
-	public Empleado crearEmpleado(String nombre, String apellido, String cedula, String direccion) throws EmpleadoExisteException {
+	public Empleado crearEmpleado(String nombre, String tipoDocumento, String numeroDocumento, String telefonoResidencia,
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,
+			String tipoEmpleado, String email)
+			throws EmpleadoExisteException {
 
-		return empresa.crearEmpleado(nombre, apellido, cedula, direccion);
+		return empresa.crearEmpleado(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR, departamento, pais, tipoEmpleado, email);
 
 	}
 
@@ -103,9 +112,12 @@ public class ControladorEmpresa {
 
 	}
 
-	public void actualizarEmpleado(String cedulaEmpleado, String nombre, String apellido, String direccion) throws EmpleadoNoExisteException {
+	public void actualizarEmpleado(String nombre, String tipoDocumento, String numeroDocumento, String telefonoResidencia,
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,
+			String tipoEmpleado, String email)
+			throws EmpleadoNoExisteException {
 
-		empresa.actualizarEmpleado(cedulaEmpleado, nombre, apellido, direccion);
+		empresa.actualizarEmpleado(nombre,tipoDocumento, numeroDocumento, telefonoResidencia, telefonoCelular, direccion, ciudadR, departamento, pais, email);
 
 	}
 
@@ -115,7 +127,8 @@ public class ControladorEmpresa {
 
 	}
 
-	public Objeto crearObjeto(String nombre, String descripcion, String codigo, String estado) throws ObjetoExisteException {
+	public Objeto crearObjeto(String nombre, String descripcion, String codigo, String estado)
+			throws ObjetoExisteException {
 
 		return empresa.crearObjeto(nombre, descripcion, codigo, estado);
 	}
@@ -132,14 +145,16 @@ public class ControladorEmpresa {
 
 	}
 
-	public void actualizarObjeto(String codigo, String nombre, String descripcion, String estado) throws ObjetoNoExisteException {
+	public void actualizarObjeto(String codigo, String nombre, String descripcion, String estado)
+			throws ObjetoNoExisteException {
 
 		empresa.actualizarObjeto(codigo, nombre, descripcion, estado);
 
 	}
 
-	public Prestamo crearPrestamon(int numero, String fechaPrestamo, String fechaEntrega, int valorPrestamo, String estado,
-			Cliente cliente, Empleado empleado, List<Objeto> listaObjetosPrestar) throws PrestamoExisteException {
+	public Prestamo crearPrestamon(int numero, String fechaPrestamo, String fechaEntrega, int valorPrestamo,
+			String estado, Cliente cliente, Empleado empleado, List<Objeto> listaObjetosPrestar)
+			throws PrestamoExisteException {
 
 		return empresa.crearPrestamo(numero, fechaPrestamo, fechaEntrega, valorPrestamo, estado, cliente, empleado,
 				listaObjetosPrestar);
@@ -153,10 +168,10 @@ public class ControladorEmpresa {
 	public List<Prestamo> listarPrestamos() {
 		return Collections.unmodifiableList(empresa.getListPrestamos());
 	}
-	
-	public boolean autenticar(String login,String password) throws AutenticacionException {
-		Seguimiento.getInstance().log("Ingreso al sistema "+login);
-		return empresa.autenticar(login,password);
+
+	public boolean autenticar(String login, String password) throws AutenticacionException {
+		Seguimiento.getInstance().log("Ingreso al sistema " + login);
+		return empresa.autenticar(login, password);
 	}
 
 	public void guardarDatos() {
@@ -167,7 +182,6 @@ public class ControladorEmpresa {
 		empresa.guardarObjetos();
 		empresa.guardarPrestamos();
 	}
-
 
 	private void leerDatos() {
 		empresa.leerUsuarios();
