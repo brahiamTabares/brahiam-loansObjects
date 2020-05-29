@@ -130,7 +130,7 @@ public class ControladorEmpresa {
 	public Objeto crearObjeto(String nombre, String descripcion, String codigo, String estado)
 			throws ObjetoExisteException {
 
-		return empresa.crearObjeto(nombre, descripcion, codigo, estado);
+		return empresa.crearObjeto(nombre, descripcion, codigo, estado, estado, estado, estado, estado, estado);
 	}
 
 	public void buscarObjeto(String codigo) {
@@ -148,7 +148,7 @@ public class ControladorEmpresa {
 	public void actualizarObjeto(String codigo, String nombre, String descripcion, String estado)
 			throws ObjetoNoExisteException {
 
-		empresa.actualizarObjeto(codigo, nombre, descripcion, estado);
+		empresa.actualizarObjeto(codigo, nombre, descripcion, estado, estado, estado, estado, estado, estado);
 
 	}
 
@@ -156,7 +156,7 @@ public class ControladorEmpresa {
 			String estado, Cliente cliente, Empleado empleado, List<Objeto> listaObjetosPrestar)
 			throws PrestamoExisteException {
 
-		return empresa.crearPrestamo(numero, fechaPrestamo, fechaEntrega, valorPrestamo, estado, cliente, empleado,
+		return empresa.crearPrestamo(numero, fechaPrestamo, valorPrestamo, fechaEntrega, estado, cliente, empleado,
 				listaObjetosPrestar);
 
 	}
