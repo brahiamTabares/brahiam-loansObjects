@@ -64,24 +64,24 @@ public class Empresa implements Serializable {
 	}
 
 	// Crear
-	public Cliente crearCliente(String tipoDocumento,String numeroDocumento,String nombre,String telefonoResidencia,
+	public Cliente crearCliente(String nombre,String tipoDocumento,String numeroDocumento,String telefonoResidencia,
 			String telefonoCelular,String direccion,String ciudadR,String departamento,String pais, String profesion, String email) throws ClienteExisteException {
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un cliente ");
 		if( buscarCliente(numeroDocumento) != null  ) {
 			throw new ClienteExisteException("ERROR: Ya existe un cliente con cédula "+numeroDocumento);
 		}
-		Cliente nuevoCliente = new Cliente(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR, departamento, pais,profesion, email);
+		Cliente nuevoCliente = new Cliente(nombre,tipoDocumento, numeroDocumento,  telefonoResidencia, telefonoCelular, direccion, ciudadR, departamento, pais,profesion, email);
 		listClientes.add(nuevoCliente);
 		return nuevoCliente;
 	}
 
-	public Empleado crearEmpleado(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
+	public Empleado crearEmpleado(String nombre,String tipoDocumento, String numeroDocumento,  String telefonoResidencia,
 			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String tipoEmpleado, String email) throws EmpleadoExisteException {
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", creó un empleado ");
 		if( buscarEmpleado(numeroDocumento) != null  ) {
 			throw new EmpleadoExisteException("ERROR: Ya existe un empleado con c�dula "+numeroDocumento);
 		}
-		Empleado nuevoEmpleado = new Empleado(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
+		Empleado nuevoEmpleado = new Empleado(nombre,tipoDocumento, numeroDocumento,  telefonoResidencia, telefonoCelular, direccion, ciudadR,
 				departamento, pais,tipoEmpleado, email);
 		listaEmpleados.add(nuevoEmpleado);
 		return nuevoEmpleado;

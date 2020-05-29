@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.control.Label?>
 
-<BorderPane minHeight="900.0" minWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorCrudCliente">
+<BorderPane minHeight="1000.0" minWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorCrudCliente">
 	<!-- TODO Add Nodes -->
 	<center>
 		<SplitPane dividerPositions="0.4959839357429719" focusTraversable="true" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
@@ -37,26 +37,26 @@
                     </rowConstraints>
                      <children>
                         <Label prefHeight="130.0" prefWidth="130.0" text="Tipo Documento" />
-                        <ComboBox prefWidth="150.0" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="tipoDocumentoText" prefWidth="150.0" GridPane.columnIndex="1" />
                         <Label prefHeight="25.0" prefWidth="127.0" text="           N documento" GridPane.columnIndex="2" />
-                        <TextField prefHeight="32.0" prefWidth="135.0" GridPane.columnIndex="3" />
-                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="numeroDText" prefHeight="32.0" prefWidth="135.0" GridPane.columnIndex="3" />
+                        <TextField fx:id="celularText" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                         <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <TextField fx:id="profesionText" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                         <Label prefHeight="32.0" prefWidth="139.0" text="             Celular" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                         <Label prefHeight="40.0" prefWidth="135.0" text="             Profesion" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                         <Label prefHeight="36.0" prefWidth="110.0" text="Teléfono  " GridPane.rowIndex="1" />
                         <Label prefHeight="33.0" prefWidth="110.0" text="Dirección" GridPane.rowIndex="2" />
                         <Label prefHeight="33.0" prefWidth="150.0" text="Pais" GridPane.rowIndex="4" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField prefHeight="32.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="telefonoText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="ciudadRText" prefHeight="32.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TextField prefHeight="35.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="paisText" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="emailText" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="direccionTest" prefHeight="35.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label prefHeight="30.0" prefWidth="153.0" text="Ciudad de Residencia" GridPane.rowIndex="3" />
                         <Label prefHeight="32.0" prefWidth="135.0" text="       Departamento" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                        <TextField prefHeight="36.0" prefWidth="135.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <TextField fx:id="departamentoText" prefHeight="36.0" prefWidth="135.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                         <Label prefHeight="26.0" prefWidth="150.0" text="Email" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
@@ -70,7 +70,7 @@
                     </rowConstraints>
                      <children>
                         <Label prefHeight="30.0" prefWidth="175.0" text="Nombre Completo" />
-                        <TextField prefHeight="31.0" prefWidth="282.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="nombreText" prefHeight="31.0" prefWidth="282.0" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
 					</children>
@@ -80,16 +80,16 @@
 						<TableView fx:id="tablaClientes" layoutX="7.0" layoutY="37.0" prefHeight="197.0" prefWidth="1000.0">
 							<columns>
 								<TableColumn fx:id="nombreColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="119.0" text="Nombre" />
-								<TableColumn fx:id="apellidoColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="95.0" text="Tipo Documento" />
-								<TableColumn fx:id="cedulaColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" text="N  documento" />
-								<TableColumn fx:id="direccionColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="118.0" text="Telefono" />
-                        <TableColumn prefWidth="75.0" text="Celular" />
-                        <TableColumn prefWidth="75.0" text="Direccion" />
-                        <TableColumn prefWidth="102.0" text="C .Residencia" />
-                        <TableColumn prefWidth="87.0" text="Departamento" />
-                        <TableColumn prefWidth="75.0" text="Pais" />
-                        <TableColumn prefWidth="75.0" text="Profesion" />
-                        <TableColumn prefWidth="75.0" text="Email" />
+								<TableColumn fx:id="tipoDocumentoColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="95.0" text="Tipo Documento" />
+								<TableColumn fx:id="numeroDColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" text="N  documento" />
+								<TableColumn fx:id="telefonoColumn" maxWidth="5000.0" minWidth="10.0" prefWidth="118.0" text="Telefono" />
+                        <TableColumn fx:id="celularColumn" prefWidth="75.0" text="Celular" />
+                        <TableColumn fx:id="direccionColumn" prefWidth="75.0" text="Direccion" />
+                        <TableColumn fx:id="ciudadRColumn" prefWidth="102.0" text="C .Residencia" />
+                        <TableColumn fx:id="departamentoColumn" prefWidth="87.0" text="Departamento" />
+                        <TableColumn fx:id="paisColumn" prefWidth="75.0" text="Pais" />
+                        <TableColumn fx:id="profesionColumn" prefWidth="75.0" text="Profesion" />
+                        <TableColumn fx:id="emailColumn" prefWidth="75.0" text="Email" />
 							</columns>
 						</TableView>
 						<HBox layoutX="13.0" layoutY="10.0" prefHeight="34.0" prefWidth="485.0" />

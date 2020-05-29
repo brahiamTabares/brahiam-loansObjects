@@ -30,9 +30,9 @@ public class Persona {
 	public Persona(String nombre,String tipoDocumento, String numeroDocumento, String telefonoResidencia,
 			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) {
 		super();
+		this.nombre = nombre;
 		this.tipoDocumento = tipoDocumento;
 		this.numeroDocumento = numeroDocumento;
-		this.nombre = nombre;
 		this.telefonoResidencia = telefonoResidencia;
 		this.telefonoCelular = telefonoCelular;
 		this.direccion = direccion;
