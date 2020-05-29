@@ -3,7 +3,7 @@ package persistencia;
 import modelo.Prestamo;
 
 public class PrestamoParserUtil {
-	private static final String SEPARADOR = ",";
+	private static final String SEPARADOR = "@@";
 
 	public static String toString(Prestamo prestamo) {
 		return prestamo.getNumero()+ SEPARADOR + prestamo.getEstado() + SEPARADOR

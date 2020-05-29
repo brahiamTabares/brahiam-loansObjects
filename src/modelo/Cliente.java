@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "cliente")
 @XmlAccessorType(XmlAccessType.FIELD)
-//prueba
+
 
 public class Cliente extends Persona implements Serializable {
 
@@ -23,10 +23,10 @@ public class Cliente extends Persona implements Serializable {
 	}
 
 	public Cliente(String tipoDocumento, String numeroDocumento, String nombre, String telefonoResidencia,
-			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais, String email) {
+			String telefonoCelular, String direccion, String ciudadR, String departamento, String pais,String profesion, String email) {
 		
 		super(tipoDocumento, numeroDocumento, nombre, telefonoResidencia, telefonoCelular, direccion, ciudadR,
-				departamento, pais, email);
+				departamento, pais, profesion, email);
 	}
 
 	public List<Prestamo> getListaPrestamosAsociados() {

@@ -17,7 +17,7 @@ public class ClienteParserUtil {
 		// crear un arreglo arreglo = { "123","sandra","quintero","gaviota" } 
 		String[] arreglo = texto.split(SEPARADOR);
 		
-		Cliente cliente = new Cliente(arreglo[1],arreglo[2], arreglo[0],arreglo[3]);
+		Cliente cliente = new Cliente(arreglo[1],arreglo[2], arreglo[0],arreglo[3], texto, texto, texto, texto, texto, texto, texto);
 		return cliente;
 	}
 }
