@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Persona {
 
-	private static final String TIPO_CONTRASEÑA="Contraseña de identidad";
+	private static final String TIPO_CONTRASENIA="Contraseña de identidad";
     private static  final String TIPO_CEDULA="Cedula de ciudadania ";
     private static  final String TIPO_TARJETA="Tarjeta de identidad"; 
     private static final  String TIPO_EXTRANJERA= "Cedula extranjera";
@@ -132,8 +132,8 @@ public class Persona {
 		this.email = email;
 	}
 
-	public static String getTipoContraseña() {
-		return TIPO_CONTRASEÑA;
+	public static String getTipoContrasenia() {
+		return TIPO_CONTRASENIA;
 	}
 	public static String getTipoCedula() {
 		return TIPO_CEDULA;

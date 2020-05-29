@@ -149,7 +149,7 @@ public class ControladorCrudCliente implements ControladorVentana {
 	}
 	private void inicializarTipoDocumento() {
 		
-        tipoDocumentoText.getItems().add(Cliente.getTipoContraseña());	
+        tipoDocumentoText.getItems().add(Cliente.getTipoContrasenia());	
 		tipoDocumentoText.getItems().add(Cliente.getTipoCedula());
         tipoDocumentoText.getItems().add(Cliente.getTipoTarjeta());
 		tipoDocumentoText.getItems().add(Cliente.getTipoExtranjera());
