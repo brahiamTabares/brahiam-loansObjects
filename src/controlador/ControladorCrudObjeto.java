@@ -28,13 +28,38 @@ public class ControladorCrudObjeto implements ControladorVentana{
 	@FXML
 	private TableColumn<Objeto, String> estadoColumn;
 	@FXML
+	private TableColumn<Objeto, String> cantidadColumn;
+	@FXML
+	private TableColumn<Objeto, String> colorColumn;
+	@FXML
+	private TableColumn<Objeto, String> pesoColumn;
+	@FXML
+	private TableColumn<Objeto, String> precioPColmn;
+	@FXML
+	private TableColumn<Objeto, String> tipo;
+	
+	@FXML
+	private TextField codigoText;
+	@FXML
 	private TextField nombreText;
 	@FXML
 	private TextField descripcionText;
 	@FXML
-	private TextField codigoText;
+	private ComboBox<String>estado;
 	@FXML
 	private ComboBox<String> estadoList;
+	@FXML
+	private TextField cantidadText;
+	@FXML
+	private TextField colorText;
+	@FXML
+	private TextField pesoText;
+	@FXML
+	private TextField precioText;
+	@FXML
+	private ComboBox<String>tipoText;
+	
+	
 	private boolean nuevo = true;
 
 	@FXML
