@@ -5,36 +5,49 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane minHeight="500.0" minWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorCrudObjeto">
+<BorderPane minHeight="700.0" minWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControladorCrudObjeto">
   <!-- TODO Add Nodes -->
   <center>
-    <SplitPane dividerPositions="0.5" focusTraversable="true" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+    <SplitPane dividerPositions="0.5" focusTraversable="true" orientation="VERTICAL" prefHeight="100.0" prefWidth="150.0">
       <items>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
           <children>
-            <GridPane layoutX="24.0" layoutY="42.0" prefHeight="109.0" prefWidth="460.0">
-              <children>
-                <Label prefHeight="27.0" prefWidth="99.0" text="Código" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                <Label prefHeight="31.0" prefWidth="98.0" text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                <Label prefHeight="31.0" prefWidth="98.00009999999747" text="Descripción" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                <Label prefHeight="24.0" prefWidth="98.0" text="Estado" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                <TextField fx:id="codigoText" prefWidth="356.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                <TextField fx:id="nombreText" prefHeight="24.0" prefWidth="356.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <TextField fx:id="descripcionText" prefHeight="24.0" prefWidth="356.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <ComboBox fx:id="estadoList" prefHeight="27.0" prefWidth="356.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-              </children>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="104.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="356.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-            <HBox layoutX="202.0" layoutY="160.0" prefHeight="72.0" prefWidth="275.0">
+                  <GridPane layoutX="137.0" layoutY="98.0" prefHeight="151.0" prefWidth="507.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="99.0" text="Código" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label prefHeight="31.0" prefWidth="98.0" text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label prefHeight="31.0" prefWidth="98.00009999999747" text="Descripción" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label prefHeight="24.0" prefWidth="98.0" text="Estado" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="codigoText" prefWidth="356.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <TextField fx:id="nombreText" prefHeight="24.0" prefWidth="356.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="descripcionText" prefHeight="24.0" prefWidth="356.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="estadoList" prefHeight="27.0" prefWidth="356.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label prefHeight="21.0" prefWidth="84.0" text="    Color" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                        <Label prefHeight="27.0" prefWidth="99.0" text="   Peso (Kg)" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label prefHeight="27.0" prefWidth="99.0" text="   Precio Prestamo" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label prefHeight="20.999900000002526" prefWidth="84.0" text="  Tipo" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <TextField id="codigoText" fx:id="colorText" prefWidth="356.0" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                        <TextField id="codigoText" fx:id="pesoText" prefWidth="356.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField id="codigoText" fx:id="precioText" prefWidth="356.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <ComboBox id="estadoList" fx:id="tipotext" prefHeight="27.0" prefWidth="356.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Label prefHeight="24.0" prefWidth="98.0" text="Cantidad" GridPane.rowIndex="4" />
+                        <TextField fx:id="cantidadText" prefHeight="24.0" prefWidth="356.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="84.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="134.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="124.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="156.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="27.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+            <HBox layoutX="253.0" layoutY="301.0" prefHeight="72.0" prefWidth="275.0">
               <children>
                 <Button mnemonicParsing="false" onAction="#agregarObjeto" prefHeight="31.0" prefWidth="91.0" text="Nuevo" />
                 <Button mnemonicParsing="false" onAction="#actualizarObjeto" prefHeight="31.0" prefWidth="77.0" text="Guardar" />
@@ -45,12 +58,17 @@
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
           <children>
-            <TableView fx:id="tablaObjetos" layoutX="14.0" layoutY="14.0" prefHeight="193.0" prefWidth="470.0">
+            <TableView fx:id="tablaObjetos" layoutX="6.0" layoutY="33.0" prefHeight="193.0" prefWidth="840.0">
               <columns>
                 <TableColumn fx:id="codigoColumn" prefWidth="68.0" text="Código" />
                 <TableColumn fx:id="nombreColumn" prefWidth="128.0" text="Nombre" />
-                <TableColumn fx:id="descripcionColumn" prefWidth="187.0" text="Descripción" />
-                <TableColumn fx:id="estadoColumn" text="Estado" />
+                <TableColumn fx:id="descripcionColumn" prefWidth="143.0" text="Descripción" />
+                <TableColumn fx:id="estadoColumn" prefWidth="124.0" text="Estado" />
+                        <TableColumn fx:id="cantidadColumn" prefWidth="75.0" text="Cantidad" />
+                        <TableColumn fx:id="colorColumn" prefWidth="75.0" text="Color" />
+                        <TableColumn fx:id="pesoColumn" prefWidth="75.0" text="Peso" />
+                        <TableColumn fx:id="precioPColumn" prefWidth="75.0" text="Precio P" />
+                        <TableColumn fx:id="tipoColumn" prefWidth="75.0" text="Tipo" />
               </columns>
             </TableView>
           </children>
