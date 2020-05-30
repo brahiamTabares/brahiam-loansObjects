@@ -2,20 +2,14 @@
 <empleados>
     <empleado>
         <nombre>Elvio</nombre>
-        <apellido>Lado</apellido>
-        <cedula>1094907358</cedula>
         <direccion>La Colina 5C</direccion>
     </empleado>
     <empleado>
         <nombre>Aquiles</nombre>
-        <apellido>Castro</apellido>
-        <cedula>75623489</cedula>
         <direccion>El Porvenir </direccion>
     </empleado>
     <empleado>
         <nombre>Elvis</nombre>
-        <apellido>Nieto</apellido>
-        <cedula>1094905346</cedula>
         <direccion>La Longeva</direccion>
     </empleado>
 </empleados>
