@@ -1,6 +1,6 @@
 package controlador;
 
-import excepciones.ClienteNoExisteException;
+
 import excepciones.ObjetoExisteException;
 import excepciones.ObjetoNoExisteException;
 import javafx.collections.FXCollections;
@@ -13,18 +13,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import modelo.Objeto;
 
-public class ControladorCrudObjeto implements ControladorVentana{
+public class ControladorCrudObjeto implements ControladorVentana {
 
 	private ObservableList<Objeto> objetoData = FXCollections.observableArrayList();
 
 	@FXML
 	private TableView<Objeto> tablaObjetos;
 	@FXML
+	private TableColumn<Objeto, String> codigoColumn;
+	@FXML
 	private TableColumn<Objeto, String> nombreColumn;
 	@FXML
 	private TableColumn<Objeto, String> descripcionColumn;
-	@FXML
-	private TableColumn<Objeto, String> codigoColumn;
 	@FXML
 	private TableColumn<Objeto, String> estadoColumn;
 	@FXML
@@ -34,10 +34,10 @@ public class ControladorCrudObjeto implements ControladorVentana{
 	@FXML
 	private TableColumn<Objeto, String> pesoColumn;
 	@FXML
-	private TableColumn<Objeto, String> precioPColmn;
+	private TableColumn<Objeto, String> precioPColumn;
 	@FXML
-	private TableColumn<Objeto, String> tipo;
-	
+	private TableColumn<Objeto, String> tipoColumn;
+
 	@FXML
 	private TextField codigoText;
 	@FXML
@@ -45,7 +45,7 @@ public class ControladorCrudObjeto implements ControladorVentana{
 	@FXML
 	private TextField descripcionText;
 	@FXML
-	private ComboBox<String>estado;
+	private ComboBox<String> estado;
 	@FXML
 	private ComboBox<String> estadoList;
 	@FXML
@@ -57,18 +57,33 @@ public class ControladorCrudObjeto implements ControladorVentana{
 	@FXML
 	private TextField precioText;
 	@FXML
-	private ComboBox<String>tipoText;
-	
-	
+	private ComboBox<String> tipotext;
+	int cantidad;
+
 	private boolean nuevo = true;
 
 	@FXML
 	private void initialize() {
+		
 		ControladorPrincipal.registrarControladorVentana(this);
+		inicializarEstados();
+		//inicializarTiposObjetos();
+	}
+	
+		
+	 
+	public void inicializarTablaObjetos()	{
+		
+		codigoColumn.setCellValueFactory(new PropertyValueFactory<Objeto, String>("codigo"));
 		nombreColumn.setCellValueFactory(new PropertyValueFactory<Objeto, String>("nombre"));
 		descripcionColumn.setCellValueFactory(new PropertyValueFactory<Objeto, String>("descripcion"));
-		codigoColumn.setCellValueFactory(new PropertyValueFactory<Objeto, String>("codigo"));
 		estadoColumn.setCellValueFactory(new PropertyValueFactory<Objeto, String>("estado"));
+		cantidadColumn.setCellValueFactory(new PropertyValueFactory<Objeto, String>("cantidad"));
+		colorColumn.setCellValueFactory(new PropertyValueFactory<Objeto, String>("color"));
+		pesoColumn.setCellValueFactory(new PropertyValueFactory<Objeto, String>("peso"));
+		precioPColumn.setCellValueFactory(new PropertyValueFactory<Objeto, String>("precio"));
+		tipoColumn.setCellValueFactory(new PropertyValueFactory<Objeto, String>("tipo"));
+
 		objetoData = FXCollections.observableArrayList(ControladorEmpresa.getInstance().listarObjetos());
 
 		tablaObjetos.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -77,9 +92,10 @@ public class ControladorCrudObjeto implements ControladorVentana{
 		});
 
 		tablaObjetos.setItems(objetoData);
+
+	
 		
-		inicializarEstados();
-	}
+	}  
 
 	private void inicializarEstados() {
 		estadoList.getItems().add(Objeto.ESTADO_DISPONIBLE);
@@ -87,6 +103,12 @@ public class ControladorCrudObjeto implements ControladorVentana{
 		estadoList.getItems().add(Objeto.ESTADO_PRESTADO);
 	}
 
+	
+	/*
+	 * //private void inicializarTiposObjetos() {
+	 * 
+	 * tipoText.getItems().add(Objeto.TIPO_ELECTRODOMESTICO); }
+	 */
 	/**
 	 * Fills all text fields to show details about the person. If the specified
 	 * person is null, all text fields are cleared.
@@ -95,15 +117,26 @@ public class ControladorCrudObjeto implements ControladorVentana{
 	 */
 	private void showObjetDetails(Objeto objeto) {
 		if (objeto != null) {
+			codigoText.setText(objeto.getCodigo());
 			nombreText.setText(objeto.getNombre());
 			descripcionText.setText(objeto.getDescripcion());
-			codigoText.setText(objeto.getCodigo());
-			estadoList.setValue( objeto.getEstado() );
+			estadoList.setValue(objeto.getEstado());
+			cantidadText.setText("" + objeto.getCantidad());
+			colorText.setText(objeto.getColor());
+			pesoText.setText(objeto.getPeso());
+			precioText.setText(objeto.getValorUnitario());
+			tipotext.setValue(objeto.getTipo());
+
 		} else {
+			codigoText.setText("");
 			nombreText.setText("");
 			descripcionText.setText("");
-			codigoText.setText("");
 			estadoList.getSelectionModel().clearSelection();
+			cantidadText.setText("");
+			colorText.setText("");
+			precioText.setText("");
+			tipotext.getSelectionModel().clearSelection();
+
 			nuevo = true;
 			tablaObjetos.getSelectionModel().clearSelection();
 		}
@@ -119,22 +152,24 @@ public class ControladorCrudObjeto implements ControladorVentana{
 		Objeto objeto;
 		if (nuevo) {
 			try {
-				objeto = ControladorEmpresa.getInstance().crearObjeto(nombreText.getText(), descripcionText.getText(),
-						codigoText.getText(), estadoList.getValue());
+				cantidad = Integer.parseInt(cantidadText.getText());
+				objeto = ControladorEmpresa.getInstance().crearObjeto(codigoText.getText(), nombreText.getText(),
+						descripcionText.getText(), cantidad, colorText.getText(), pesoText.getText(), estado.getValue(),
+						tipotext.getValue(), precioText.getText());
 				tablaObjetos.getItems().add(objeto);
 			} catch (ObjetoExisteException e) {
 				AlertaUtil.mostrarMensajeError(e.getMessage());
 			}
-			
+
 		} else {
 			try {
-			ControladorEmpresa.getInstance().actualizarObjeto(codigoText.getText(), nombreText.getText(),
-						descripcionText.getText(), estadoList.getValue());
+				ControladorEmpresa.getInstance().actualizarObjeto(codigoText.getText(), nombreText.getText(),
+						descripcionText.getText(), cantidad, colorText.getText(), pesoText.getText(), estado.getValue(),
+						tipotext.getValue(), precioText.getText(), null);
 			} catch (ObjetoNoExisteException e) {
 				AlertaUtil.mostrarMensajeError(e.getMessage());
 			}
-		
-			
+
 		}
 		tablaObjetos.refresh();
 		showObjetDetails(null);
@@ -154,7 +189,9 @@ public class ControladorCrudObjeto implements ControladorVentana{
 
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see controlador.ControladorVentana#actualizarVentana()
 	 */
 	@Override
@@ -162,5 +199,4 @@ public class ControladorCrudObjeto implements ControladorVentana{
 		tablaObjetos.refresh();
 	}
 
-	
 }

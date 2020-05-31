@@ -18,10 +18,20 @@ public class Objeto implements Serializable {
 	public static final String ESTADO_PRESTADO = "Prestado";
 	public static final String ESTADO_DISPONIBLE = "Disponible";
 	public static final String ESTADO_RESERVADO = "Reservado";
+	/*
+	 * error null pointer
+	 */
+	public static final String  TIPO_ELECTRODOMESTICO ="ELectricos";
+	public static final String  TIPO_CONTRUCCION ="CONTRUCCION";
+	public static final String  TIPO_BOTAS ="Botas";
+	
+
+	
 
 	private String nombre;
 	private String codigo;
 	private String descripcion;
+	private int cantidad;
 	private String Color;
 	private String peso;
 	private String estado;
@@ -33,17 +43,18 @@ public class Objeto implements Serializable {
 	public Objeto() {
 	}
 
-	public Objeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
-			String tipo,String valorUnitario,String valorTotal ) {
+	public Objeto( String codigo,String nombre, String descripcion,int cantidad, String color, String peso, String estado,
+			String tipo,String valorUnitario ) {
 		this.nombre = nombre;
 		this.codigo = codigo;
 		this.descripcion = descripcion;
+		this.cantidad=cantidad;
 		this.Color = color;
 		this.peso = peso;
 		this.estado = estado;
 		this.tipo = tipo;
 		this.valorUnitario=valorUnitario;
-		this.valorTotal=valorTotal;
+		
 
 	}
 
@@ -126,6 +137,14 @@ public class Objeto implements Serializable {
 
 	public void setValorTotal(String valorTotal) {
 		this.valorTotal = valorTotal;
+	}
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
 	}
 
 }
