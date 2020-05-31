@@ -24,15 +24,12 @@ public class PersistenciaComas {
 		}
 	}
 
-	public static void guardarObjetos(List<Objeto> objetos) {
-		try (FileWriter archivo = new FileWriter(OBJETO_COMA)) {
-			for (Objeto objeto : objetos) {
-				archivo.write(ObjectoParserUtil.toString(objeto) + "\n");
-			}
-		} catch (Exception e) {
-		}
-	}
-
+	/*
+	 * public static void guardarObjetos(List<Objeto> objetos) { try (FileWriter
+	 * archivo = new FileWriter(OBJETO_COMA)) { for (Objeto objeto : objetos) {
+	 * archivo.write(ObjectoParserUtil.toString(objeto) + "\n"); } } catch
+	 * (Exception e) { } }
+	 */
 	public static void guardarEmpleados(List<Empleado> empleados) {
 		try (FileWriter archivo = new FileWriter(EMPLEADO_COMA)) {
 			for (Empleado empleado : empleados) {

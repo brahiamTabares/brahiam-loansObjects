@@ -4,72 +4,84 @@
         <nombre>Computador</nombre>
         <codigo>0</codigo>
         <descripcion>Escritorio</descripcion>
+        <cantidad>0</cantidad>
         <estado>Prestado</estado>
     </objeto>
     <objeto>
         <nombre>Video Beam 1</nombre>
         <codigo>1</codigo>
         <descripcion>Epson1</descripcion>
+        <cantidad>0</cantidad>
         <estado>Disponible</estado>
     </objeto>
     <objeto>
         <nombre>Video Beam 2</nombre>
         <codigo>2</codigo>
         <descripcion>Epson</descripcion>
+        <cantidad>0</cantidad>
         <estado>Prestado</estado>
     </objeto>
     <objeto>
         <nombre>Video Beam 3</nombre>
         <codigo>3</codigo>
         <descripcion>Sonic</descripcion>
+        <cantidad>0</cantidad>
         <estado>Disponible</estado>
     </objeto>
     <objeto>
         <nombre>Mesa Plegable</nombre>
         <codigo>4</codigo>
         <descripcion>180 x 74 x 75</descripcion>
+        <cantidad>0</cantidad>
         <estado>Disponible</estado>
     </objeto>
     <objeto>
         <nombre>Silla con espaldar</nombre>
         <codigo>5</codigo>
         <descripcion>Rimax</descripcion>
+        <cantidad>0</cantidad>
         <estado>Prestado</estado>
     </objeto>
     <objeto>
         <nombre>Mesa cuadrada</nombre>
         <codigo>6</codigo>
         <descripcion>Plástica cuadrada Rimax</descripcion>
+        <cantidad>0</cantidad>
         <estado>Prestado</estado>
     </objeto>
     <objeto>
         <nombre>Portatil</nombre>
         <codigo>7</codigo>
         <descripcion>Toshiba Satellite</descripcion>
+        <cantidad>0</cantidad>
         <estado>Disponible</estado>
     </objeto>
     <objeto>
         <nombre>Tablero Acrílico</nombre>
         <codigo>8</codigo>
         <descripcion>con base 160 cm x 120 cm</descripcion>
+        <cantidad>0</cantidad>
         <estado>Prestado</estado>
     </objeto>
     <objeto>
         <nombre>Computador </nombre>
         <codigo>9</codigo>
         <descripcion>Acer One</descripcion>
+        <cantidad>0</cantidad>
         <estado>Disponible</estado>
     </objeto>
     <objeto>
         <nombre>Mesa Plegable 2</nombre>
         <codigo>10</codigo>
         <descripcion>180 x 74 x 75</descripcion>
+        <cantidad>0</cantidad>
         <estado>Prestado</estado>
     </objeto>
     <objeto>
         <nombre>Micrófono Inhalámbrico</nombre>
         <codigo>11</codigo>
         <descripcion>Premier MIC-131 Negro</descripcion>
+        <cantidad>0</cantidad>
         <estado>Disponible</estado>
     </objeto>
 </objetos>

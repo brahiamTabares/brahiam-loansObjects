@@ -41,7 +41,7 @@
                         <Label prefHeight="25.0" prefWidth="127.0" text="   # Documento:" GridPane.columnIndex="2" />
                         <TextField fx:id="numeroDText" prefHeight="32.0" prefWidth="135.0" GridPane.columnIndex="3" />
                         <TextField fx:id="celularText" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <TextField fx:id="profesionText" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                         <Label prefHeight="32.0" prefWidth="139.0" text="   Celular:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                         <Label prefHeight="40.0" prefWidth="135.0" text="   Profesion:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                         <Label prefHeight="36.0" prefWidth="110.0" text="Teléfono:" GridPane.rowIndex="1" />

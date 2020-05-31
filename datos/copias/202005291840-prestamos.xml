@@ -1,93 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <prestamos>
     <prestamo>
-        <estado>creado</estado>
-        <valorPrestamo>10000</valorPrestamo>
+        <numero>1</numero>
         <fechaPrestamo>12/12/2020</fechaPrestamo>
         <fechaEntrega>12/12/2020</fechaEntrega>
-        <clienteAsociado>
-            <nombre>Casimiro</nombre>
-            <direccion>Monte Negro 4a</direccion>
-        </clienteAsociado>
+        <valorPrestamo>10000</valorPrestamo>
+        <estado>creado</estado>
         <empleadoAsociado>
             <nombre>Aquiles</nombre>
+            <apellido>Castro</apellido>
+            <cedula>75623489</cedula>
             <direccion>El Porvenir</direccion>
         </empleadoAsociado>
+        <clienteAsociado>
+            <nombre>Casimiro</nombre>
+            <apellido>Buenavista</apellido>
+            <cedula>1094904723</cedula>
+            <direccion>Monte Negro 4a</direccion>
+        </clienteAsociado>
         <listaObjetosAsociados>
             <nombre>obj</nombre>
+            <descripcion>des</descripcion>
             <codigo>0</codigo>
-            <descripcion>des</descripcion>
-            <cantidad>0</cantidad>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
         <listaObjetosAsociados>
             <nombre>obj</nombre>
+            <descripcion>des</descripcion>
             <codigo>5</codigo>
-            <descripcion>des</descripcion>
-            <cantidad>0</cantidad>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
         <listaObjetosAsociados>
             <nombre>obj</nombre>
+            <descripcion>des</descripcion>
             <codigo>10</codigo>
-            <descripcion>des</descripcion>
-            <cantidad>0</cantidad>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
         <listaObjetosAsociados>
             <nombre>obj</nombre>
-            <codigo>15</codigo>
             <descripcion>des</descripcion>
-            <cantidad>0</cantidad>
+            <codigo>15</codigo>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
     </prestamo>
     <prestamo>
-        <estado>Creado</estado>
-        <valorPrestamo>250000</valorPrestamo>
+        <numero>2</numero>
         <fechaPrestamo>25/02/2020</fechaPrestamo>
         <fechaEntrega>02/04/2020</fechaEntrega>
-        <clienteAsociado>
-            <nombre>Simelemon</nombre>
-            <direccion>Los Caños Mz 15 - 12</direccion>
-        </clienteAsociado>
+        <valorPrestamo>250000</valorPrestamo>
+        <estado>Creado</estado>
         <empleadoAsociado>
             <nombre>Aquiles</nombre>
+            <apellido>Castro</apellido>
+            <cedula>75623489</cedula>
             <direccion>El Porvenir </direccion>
         </empleadoAsociado>
+        <clienteAsociado>
+            <nombre>Simelemon</nombre>
+            <apellido>Tolomeo</apellido>
+            <cedula>7522062</cedula>
+            <direccion>Los Caños Mz 15 - 12</direccion>
+        </clienteAsociado>
         <listaObjetosAsociados>
             <nombre>Video Beam 2</nombre>
-            <codigo>2</codigo>
             <descripcion>Epson</descripcion>
-            <cantidad>0</cantidad>
+            <codigo>2</codigo>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
         <listaObjetosAsociados>
             <nombre>Tablero Acrílico</nombre>
-            <codigo>8</codigo>
             <descripcion>con base 160 cm x 120 cm</descripcion>
-            <cantidad>0</cantidad>
+            <codigo>8</codigo>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
     </prestamo>
     <prestamo>
-        <estado>Creado</estado>
-        <valorPrestamo>20000</valorPrestamo>
+        <numero>3</numero>
         <fechaPrestamo>24/04/2020</fechaPrestamo>
         <fechaEntrega>28/04/2020</fechaEntrega>
-        <clienteAsociado>
-            <nombre>Casimiro</nombre>
-            <direccion>Monte Negro 4a</direccion>
-        </clienteAsociado>
+        <valorPrestamo>20000</valorPrestamo>
+        <estado>Creado</estado>
         <empleadoAsociado>
             <nombre>Elvio</nombre>
+            <apellido>Lado</apellido>
+            <cedula>1094907358</cedula>
             <direccion>La Colina 5C</direccion>
         </empleadoAsociado>
+        <clienteAsociado>
+            <nombre>Casimiro</nombre>
+            <apellido>Buenavista</apellido>
+            <cedula>1094904723</cedula>
+            <direccion>Monte Negro 4a</direccion>
+        </clienteAsociado>
         <listaObjetosAsociados>
             <nombre>Mesa cuadrada</nombre>
-            <codigo>6</codigo>
             <descripcion>Plástica cuadrada Rimax</descripcion>
-            <cantidad>0</cantidad>
+            <codigo>6</codigo>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
     </prestamo>

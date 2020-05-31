@@ -88,9 +88,8 @@ public class Empresa implements Serializable {
 
 	}
 
-	public Objeto crearObjeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
-
-			String tipo, String valorUnitario,String valorTotal) throws ObjetoExisteException {
+	public Objeto crearObjeto(String codigo,String nombre, String descripcion,int cantidad, String color, String peso, String estado,
+			String tipo,String valorUnitario) throws ObjetoExisteException {
 
 			
 
@@ -98,7 +97,7 @@ public class Empresa implements Serializable {
 		if( buscarObjeto(codigo) != null  ) {
 			throw new ObjetoExisteException("ERROR: Ya existe un objeto con c�digo "+codigo);
 		}
-		Objeto nuevoObjeto = new Objeto(nombre,codigo,descripcion,color,peso,estado,tipo,valorUnitario,valorTotal);
+		Objeto nuevoObjeto = new Objeto( codigo, nombre,  descripcion, cantidad,  color,  peso,  estado, tipo, valorUnitario);
 		listObjetos.add(nuevoObjeto);
 		return nuevoObjeto;
 
@@ -273,8 +272,8 @@ public class Empresa implements Serializable {
 		return true;
 	}
 
-	public boolean actualizarObjeto(String nombre, String codigo, String descripcion, String color, String peso, String estado,
-			String tipo, String valorUnitario,String valorTotal) throws ObjetoNoExisteException {
+	public boolean actualizarObjeto(String codigo,String nombre, String descripcion,int cantidad, String color, String peso, String estado,
+			String tipo,String valorUnitario,String valorTotal) throws ObjetoNoExisteException {
 
 		Seguimiento.getInstance().log("Usuario " + usuarioAutenticado.getLogin() + ", Se actualizo un objeto");
 		Objeto objeto = buscarObjeto(codigo);
@@ -286,6 +285,7 @@ public class Empresa implements Serializable {
 		objeto.setNombre(nombre);
 		objeto.setCodigo(codigo);
 		objeto.setDescripcion(descripcion);
+		objeto.setCantidad(cantidad);
 		objeto.setColor(color);
 		objeto.setEstado(estado);
 		objeto.setTipo(tipo);
@@ -454,7 +454,7 @@ public class Empresa implements Serializable {
 
 	public void guardarObjetos() {
 		PersistenciaXML.guardar(new Objetos(listObjetos), Empresa.ARCHIVO_OBJETOS);
-		PersistenciaComas.guardarObjetos(listObjetos);
+		//PersistenciaComas.guardarObjetos(listObjetos);
 	}
 
 	public void leerObjetos() {

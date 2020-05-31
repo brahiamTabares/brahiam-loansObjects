@@ -17,28 +17,24 @@
             <nombre>obj</nombre>
             <codigo>0</codigo>
             <descripcion>des</descripcion>
-            <cantidad>0</cantidad>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
         <listaObjetosAsociados>
             <nombre>obj</nombre>
             <codigo>5</codigo>
             <descripcion>des</descripcion>
-            <cantidad>0</cantidad>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
         <listaObjetosAsociados>
             <nombre>obj</nombre>
             <codigo>10</codigo>
             <descripcion>des</descripcion>
-            <cantidad>0</cantidad>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
         <listaObjetosAsociados>
             <nombre>obj</nombre>
             <codigo>15</codigo>
             <descripcion>des</descripcion>
-            <cantidad>0</cantidad>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
     </prestamo>
@@ -59,14 +55,12 @@
             <nombre>Video Beam 2</nombre>
             <codigo>2</codigo>
             <descripcion>Epson</descripcion>
-            <cantidad>0</cantidad>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
         <listaObjetosAsociados>
             <nombre>Tablero Acrílico</nombre>
             <codigo>8</codigo>
             <descripcion>con base 160 cm x 120 cm</descripcion>
-            <cantidad>0</cantidad>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
     </prestamo>
@@ -87,7 +81,6 @@
             <nombre>Mesa cuadrada</nombre>
             <codigo>6</codigo>
             <descripcion>Plástica cuadrada Rimax</descripcion>
-            <cantidad>0</cantidad>
             <estado>Prestado</estado>
         </listaObjetosAsociados>
     </prestamo>

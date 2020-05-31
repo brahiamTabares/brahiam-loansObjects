@@ -127,10 +127,11 @@ public class ControladorEmpresa {
 
 	}
 
-	public Objeto crearObjeto(String nombre, String descripcion, String codigo, String estado)
+	public Objeto crearObjeto(String codigo,String nombre, String descripcion,int cantidad, String color, String peso, String estado,
+			String tipo,String valorUnitario)
 			throws ObjetoExisteException {
 
-		return empresa.crearObjeto(nombre, descripcion, codigo, estado, estado, estado, estado, estado, estado);
+		return empresa.crearObjeto( codigo, nombre,  descripcion, cantidad,  color, peso,  estado, tipo, valorUnitario);
 	}
 
 	public void buscarObjeto(String codigo) {
@@ -145,10 +146,10 @@ public class ControladorEmpresa {
 
 	}
 
-	public void actualizarObjeto(String codigo, String nombre, String descripcion, String estado)
-			throws ObjetoNoExisteException {
+	public void actualizarObjeto(String codigo,String nombre, String descripcion,int cantidad, String color, String peso, String estado,
+			String tipo,String valorUnitario,String valorTotal)throws ObjetoNoExisteException {
 
-		empresa.actualizarObjeto(codigo, nombre, descripcion, estado, estado, estado, estado, estado, estado);
+		empresa.actualizarObjeto(codigo, nombre, descripcion, cantidad, color, peso, estado, tipo, valorUnitario, valorTotal);
 
 	}
 
